@@ -8,15 +8,73 @@ namespace ES2FactionRandomizer
 {
     public class FactionSetting
     {
-        public FactionSetting(string iJsonString, int iScoreModifier)
+        public FactionSetting(int iId, string iJsonString, int iScoreModifier)
         {
+            _id = iId;
             _jsonString = iJsonString;
             _scoreModifier = iScoreModifier;
         }
 
         public string _jsonString { get; set; }
         public int _scoreModifier { get; set; }
+        public int _id { get; set; }
+
     }
+    public class FactionSettingGroup
+    {
+        public FactionSettingGroup()
+        {
+            _settingGroup = new List<FactionSetting>();
+            _rand = new Random();
+        }
+
+        public FactionSetting GetRandomSettingFromGroup(List<int> iExclusionList, int iPointValueLessThan)
+        {
+            var filteredSettingsGroup = new List<FactionSetting>();
+            foreach(var setting in _settingGroup)
+            {
+                if (iExclusionList.Contains(setting._id)){
+                    continue;
+                }
+                if (iPointValueLessThan != 0 && setting._scoreModifier > iPointValueLessThan)
+                {
+                    continue;
+                }
+            }
+            int r = _rand.Next(_settingGroup.Count());
+            return _settingGroup[r];
+        }
+
+        public FactionSetting GetRandomSettingFromGroup(int iPointValueLessThan)
+        {
+            var exclusionListEmpty = new List<int>();
+            return GetRandomSettingFromGroup(exclusionListEmpty, iPointValueLessThan);
+        }
+
+        public FactionSetting GetRandomSettingFromGroup()
+        {
+            var exclusionListEmpty = new List<int>();
+            return GetRandomSettingFromGroup(exclusionListEmpty, 0);
+        }
+        public FactionSetting GetSettingFromGroup(int iValue)
+        {
+            return _settingGroup.Find(x => x._id == iValue);
+        }
+
+        public List<FactionSetting> _settingGroup;
+        Random _rand;
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     /*
     <?xml version = "1.0" encoding="utf-8"?>
