@@ -8,17 +8,20 @@ using System.Threading.Tasks;
 
 namespace ES2FactionRandomizer.RandomFaction
 {
-    class Randomizer
+    public class Randomizer
     {
-        public Randomizer(RandomizerMethod iRandomMethod, Preferences iPreferences)
+        public Randomizer(RandomizerMethod iRandomMethod, TraitDefinitions iTraitDefinition, Preferences iPreferences)
         {
             _randomizerMethod = iRandomMethod;
-            _definitions = new TraitDefinitions();
+            _definitions = iTraitDefinition;
             _definitions.Initialize();
+            _preferences = iPreferences;
         }
-        public void GenerateRandomFaction()
+        public CustomFaction GenerateRandomFaction()
         {
-            _randomizerMethod.GenerateRandomCustomFaction(_definitions, _preferences);
+            CustomFaction faction = _randomizerMethod.GenerateRandomCustomFaction(_definitions, _preferences);
+            faction.Initialize();
+            return faction;
         }
 
         RandomizerMethod _randomizerMethod;

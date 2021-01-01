@@ -48,7 +48,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
         {
             _type = iType;
         }
-        SecondaryPopulationModifierType _type { get; set; }
+        public SecondaryPopulationModifierType _type { get; set; }
     }
     public class SecondaryPopulationModifierGroup : FactionSettingGroup
     {

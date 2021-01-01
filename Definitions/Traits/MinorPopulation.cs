@@ -44,7 +44,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
         {
             _type = iType;
         }
-        MinorPopulationType _type { get; set; }
+        public MinorPopulationType _type { get; set; }
     }
     public class MinorPopulationGroup : FactionSettingGroup
     {

@@ -25,7 +25,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
         {
             _type = iType;
         }
-        TechType _type { get; set; }
+        public TechType _type { get; set; }
     }
 
     public class TechGroup : FactionSettingGroup

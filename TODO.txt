@@ -1,0 +1,12 @@
+﻿
+Definitions
+- Add exclusivity for different faction traits that are mutually exclusive (e.g. different levels, +/- on same types)
+
+Random
+- 
+
+Export To Xml 
+- Add export custom faction to XML
+
+Other
+- Investigate if point total and trait totals are enforced when playing with custom faction, or only on saving/editing

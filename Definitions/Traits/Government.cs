@@ -21,7 +21,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
         {
             _type = iType;
         }
-        GovernmentType _type { get; set; }
+        public GovernmentType _type { get; set; }
     }
 
     public class GovernmentGroup : FactionSettingGroup

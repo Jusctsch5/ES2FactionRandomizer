@@ -31,9 +31,9 @@ namespace ES2FactionRandomizer
         public FactionSetting GetRandomSettingFromGroup(List<int> iExclusionList, int iPointValueLessThan)
         {
             var filteredSettingsGroup = new List<FactionSetting>();
-            foreach(var setting in _settingGroup)
+            foreach (var setting in _settingGroup)
             {
-                if (iExclusionList.Contains(setting._id)){
+                if (iExclusionList.Contains(setting._id)) {
                     continue;
                 }
                 if (iPointValueLessThan != 0 && setting._scoreModifier > iPointValueLessThan)
@@ -61,10 +61,48 @@ namespace ES2FactionRandomizer
             return _settingGroup.Find(x => x._id == iValue);
         }
 
+
+        public FactionSetting GetRandomSettingMinPoints(List<int> iExclusionList, int iMinPoints)
+        {
+            var filteredSettingsGroup = new List<FactionSetting>();
+            foreach (var setting in _settingGroup)
+            {
+                if (iExclusionList.Contains(setting._id))
+                {
+                    continue;
+                }
+                if (iMinPoints != 0 && setting._scoreModifier < iMinPoints)
+                {
+                    continue;
+                }
+            }
+            int r = _rand.Next(_settingGroup.Count());
+            return _settingGroup[r];
+        }
+
+        public FactionSetting GetRandomSettingRange(List<int> iExclusionList, int iMinPoints, int iMaxPoints)
+        {
+            var filteredSettingsGroup = new List<FactionSetting>();
+            foreach (var setting in _settingGroup)
+            {
+                if (iExclusionList.Contains(setting._id))
+                {
+                    continue;
+                }
+                if (iMinPoints != 0 && setting._scoreModifier < iMinPoints && setting._scoreModifier > iMaxPoints)
+                {
+                    continue;
+                }
+            }
+            int r = _rand.Next(_settingGroup.Count());
+            return _settingGroup[r];
+        }
+
         public List<FactionSetting> _settingGroup;
         Random _rand;
     }
 
+}
 
 
 
@@ -109,4 +147,3 @@ namespace ES2FactionRandomizer
   <LocalizedName>Sophisticated Cravers</LocalizedName>
 </MajorFaction>
         */
-}

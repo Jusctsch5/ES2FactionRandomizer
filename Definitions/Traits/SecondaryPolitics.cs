@@ -58,7 +58,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
         {
             _type = iType;
         }
-        SecondaryPoliticsType _type { get; set; }
+        public SecondaryPoliticsType _type { get; set; }
     }
     public class SecondaryPoliticsGroup : FactionSettingGroup
     {

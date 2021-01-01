@@ -21,6 +21,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
         FactionTraitHomePlanetPlanetTypeTropicalTitle    ,
         FactionTraitHomePlanetPlanetTypeTundraTitle      ,
         FactionTraitHomePlanetPlanetTypeVeldtTitle       ,
+        // Cresent
     }
 
     public class HomePlanet : FactionSetting
@@ -29,7 +30,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
         {
             _type = iType;
         }
-        HomePlanetType _type { get; set; } 
+        public HomePlanetType _type { get; set; } 
     }
 
     public class HomePlanetGroup : FactionSettingGroup
@@ -59,6 +60,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
         {
             return (HomePlanet)GetRandomSettingFromGroup(iPointValueLessThan);
         }
+
         public HomePlanet GetRandomHomePlanet()
         {
             return (HomePlanet)GetRandomSettingFromGroup();

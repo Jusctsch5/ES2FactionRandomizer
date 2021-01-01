@@ -30,7 +30,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
         {
             _type = iType;
         }
-        TertiaryPopulationModifierType _type { get; set; }
+        public TertiaryPopulationModifierType _type { get; set; }
     }
 
     public class TertiaryPopulationModifierGroup : FactionSettingGroup

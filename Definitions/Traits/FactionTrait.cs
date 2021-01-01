@@ -156,11 +156,11 @@ namespace ES2FactionRandomizer.Definitions.Traits
 
     public class FactionTrait : FactionSetting
     {
-        public FactionTrait(FactionTraitType iType, int iScoreModifier) : base(iType.ToString(), iScoreModifier)
+        public FactionTrait(FactionTraitType iType, int iScoreModifier) : base((int)iType, iType.ToString(), iScoreModifier)
         {
             _type = iType;
         }
-        FactionTraitType _type { get; set; }
+        public FactionTraitType _type { get; set; }
     }
     public class FactionTraitGroup : FactionSettingGroup
     {
@@ -309,14 +309,19 @@ namespace ES2FactionRandomizer.Definitions.Traits
             return (FactionTrait)GetRandomSettingFromGroup(iExclusionList, iPointValueLessThan);
         }
 
-        public FactionTrait GetRandomFactionTrait(int iPointValueLessThan)
-        {
-            return (FactionTrait)GetRandomSettingFromGroup(iPointValueLessThan);
-        }
         public FactionTrait GetRandomFactionTrait()
         {
             return (FactionTrait)GetRandomSettingFromGroup();
         }
-    }
 
+        public FactionTrait GetRandomFactionTraitMinPoints(List<int> iExclusionList, int iMinPoints)
+        {
+            return (FactionTrait)GetRandomSettingMinPoints(iExclusionList, iMinPoints);
+        }
+
+        public FactionTrait GetRandomFactionTraitRange(List<int> iExclusionList, int iMinPoints, int iMaxPoints)
+        {
+            return (FactionTrait)GetRandomSettingRange(iExclusionList, iMinPoints, iMaxPoints);
+        }
+    }
 }

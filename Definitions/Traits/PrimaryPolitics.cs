@@ -23,7 +23,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
             _type = iType;
         }
 
-        PrimaryPoliticsType _type { get; set; }
+        public PrimaryPoliticsType _type { get; set; }
     }
     public class PrimaryPoliticsGroup : FactionSettingGroup
     {
@@ -50,3 +50,4 @@ namespace ES2FactionRandomizer.Definitions.Traits
             return (PrimaryPolitics)GetRandomSettingFromGroup();
         }
     }
+}
