@@ -10,12 +10,12 @@ namespace ES2FactionRandomizer.Definitions.Traits
     {
         AffinityGameplayCravers        ,
         AffinityGameplaySophons        ,
-        AffinityGameplayLumeris        ,
+        AffinityGameplayVenetians      ,
         AffinityGameplayVampirilis     ,
         AffinityGameplayTerrans        ,
         AffinityGameplayHoratio        ,
         AffinityGameplayTimeLords      ,
-        AffinityGameplayVenetians      ,
+        AffinityGameplayUnfallen      ,
         AffinityGameplayVaulters       ,
         AffinityGameplayMajorHisshos   ,
         AffinityGameplayUmbralChoir
@@ -26,26 +26,108 @@ namespace ES2FactionRandomizer.Definitions.Traits
         public GameplayAffinity(GameplayAffinityType iType, int iScoreModifier) : base((int)iType, iType.ToString(), iScoreModifier)
         {
             _type = iType;
+            _factionTraitExclusionList = new List<int>();
+
+            if (iType == GameplayAffinityType.AffinityGameplayVampirilis || iType == GameplayAffinityType.AffinityGameplayUmbralChoir)
+            {
+                _canHaveMinorPop = false;
+            }
+            else
+            {
+                _canHaveMinorPop = true;
+            }
+
         }
 
         public GameplayAffinityType _type { get; set; }
-        
+        public List<int> _factionTraitExclusionList;
+        public bool _canHaveMinorPop { get; set; }
     }
     public class GameplayAffinityGroup : FactionSettingGroup
     {
         public void Initialize()
         {
-            _settingGroup.Add(new GameplayAffinity(GameplayAffinityType.AffinityGameplayCravers, 100));
-            _settingGroup.Add(new GameplayAffinity(GameplayAffinityType.AffinityGameplaySophons, 100));
-            _settingGroup.Add(new GameplayAffinity(GameplayAffinityType.AffinityGameplayTerrans, 95));
-            _settingGroup.Add(new GameplayAffinity(GameplayAffinityType.AffinityGameplayHoratio, 95));
-            _settingGroup.Add(new GameplayAffinity(GameplayAffinityType.AffinityGameplayTimeLords, 95));
-            _settingGroup.Add(new GameplayAffinity(GameplayAffinityType.AffinityGameplayVampirilis, 95));
-            _settingGroup.Add(new GameplayAffinity(GameplayAffinityType.AffinityGameplayLumeris, 100));
-            _settingGroup.Add(new GameplayAffinity(GameplayAffinityType.AffinityGameplayVenetians, 95));
-            _settingGroup.Add(new GameplayAffinity(GameplayAffinityType.AffinityGameplayVaulters, 95));
-            _settingGroup.Add(new GameplayAffinity(GameplayAffinityType.AffinityGameplayMajorHisshos, 100));
-            _settingGroup.Add(new GameplayAffinity(GameplayAffinityType.AffinityGameplayUmbralChoir, 100));
+            var affinityGameplayCravers       = new GameplayAffinity(GameplayAffinityType.AffinityGameplayCravers, 100);
+            var affinityGameplaySophons       = new GameplayAffinity(GameplayAffinityType.AffinityGameplaySophons, 100);
+            var affinityGameplayTerrans       = new GameplayAffinity(GameplayAffinityType.AffinityGameplayTerrans, 95);
+            var affinityGameplayHoratio       = new GameplayAffinity(GameplayAffinityType.AffinityGameplayHoratio, 95);
+            var affinityGameplayTimeLords     = new GameplayAffinity(GameplayAffinityType.AffinityGameplayTimeLords, 95);
+            var affinityGameplayVampirilis    = new GameplayAffinity(GameplayAffinityType.AffinityGameplayVampirilis, 95);
+            var affinityGameplayVenetians     = new GameplayAffinity(GameplayAffinityType.AffinityGameplayVenetians, 100);
+            var affinityGameplayUnfallen      = new GameplayAffinity(GameplayAffinityType.AffinityGameplayUnfallen, 95);
+            var affinityGameplayVaulters      = new GameplayAffinity(GameplayAffinityType.AffinityGameplayVaulters, 95);
+            var affinityGameplayMajorHisshos  = new GameplayAffinity(GameplayAffinityType.AffinityGameplayMajorHisshos, 100);
+            var affinityGameplayUmbralChoir   = new GameplayAffinity(GameplayAffinityType.AffinityGameplayUmbralChoir, 100);
+
+            affinityGameplayVampirilis._exclusiveSet = new List<int>
+            {
+                (int)FactionTraitType.FactionTraitApatheticColonists,
+                (int)FactionTraitType.FactionTraitFerventColonists1,
+                (int)FactionTraitType.FactionTraitFerventColonists2,
+                (int)FactionTraitType.FactionTraitCrowdedPlanets1,
+                (int)FactionTraitType.FactionTraitCrowdedPlanets2,
+                (int)FactionTraitType.FactionTraitGuardians,
+                (int)FactionTraitType.FactionTraitFactionTraitManualHomeSystem,
+            };
+
+            affinityGameplayVenetians._exclusiveSet = new List<int>
+            {
+                (int)FactionTraitType.FactionTraitFactionTraitManualHomeSystem,
+            };
+
+            affinityGameplayUnfallen._exclusiveSet = new List<int>
+            {
+                (int)FactionTraitType.FactionTraitApatheticColonists,
+                (int)FactionTraitType.FactionTraitFerventColonists1,
+                (int)FactionTraitType.FactionTraitFerventColonists2,
+                (int)FactionTraitType.FactionTraitFactionTraitManualHomeSystem
+            };
+
+            affinityGameplayMajorHisshos._exclusiveSet = new List<int> 
+            {
+                (int)FactionTraitType.FactionTraitInimical,
+                (int)FactionTraitType.FactionTraitContentCitizens1,
+                (int)FactionTraitType.FactionTraitContentCitizens2,
+                (int)FactionTraitType.FactionTraitCoreWorlds,
+                (int)FactionTraitType.FactionTraitExpansionists1,
+                (int)FactionTraitType.FactionTraitExpansionists2,
+                (int)FactionTraitType.FactionTraitGuardians,
+                (int)FactionTraitType.FactionTraitNaive1,
+                (int)FactionTraitType.FactionTraitNaive2,
+                (int)FactionTraitType.FactionTraitOptimistic1,
+                (int)FactionTraitType.FactionTraitOptimistic2,
+                (int)FactionTraitType.FactionTraitFactionTraitSmoothTalkers,
+                (int)FactionTraitType.FactionTraitAntiExpansionists,
+                (int)FactionTraitType.FactionTraitUtopianInfrastructure,
+                (int)FactionTraitType.FactionTraitPessimistic1,
+                (int)FactionTraitType.FactionTraitPessimistic2
+            };
+
+            affinityGameplayUmbralChoir._exclusiveSet = new List<int> 
+            {
+                (int)FactionTraitType.FactionTraitInimical,
+                (int)FactionTraitType.FactionTraitApatheticColonists,
+                (int)FactionTraitType.FactionTraitExtendedConsortium,
+                (int)FactionTraitType.FactionTraitFerventColonists1,
+                (int)FactionTraitType.FactionTraitFerventColonists2,
+                (int)FactionTraitType.FactionTraitGuardians,
+                (int)FactionTraitType.FactionTraitFactionTraitManualHomeSystem,
+                (int)FactionTraitType.FactionTraitNativeObliteratorProtection,
+                (int)FactionTraitType.FactionTraitStartWithNegativeAnomaly,
+                (int)FactionTraitType.FactionTraitStartWithPositiveAnomaly
+            };
+
+            _settingGroup.Add(affinityGameplayCravers        );
+            _settingGroup.Add(affinityGameplaySophons        );
+            _settingGroup.Add(affinityGameplayTerrans        );
+            _settingGroup.Add(affinityGameplayHoratio        );
+            _settingGroup.Add(affinityGameplayTimeLords      );
+            _settingGroup.Add(affinityGameplayVampirilis     );
+            _settingGroup.Add(affinityGameplayVenetians      );
+            _settingGroup.Add(affinityGameplayUnfallen       );
+            _settingGroup.Add(affinityGameplayVaulters       );
+            _settingGroup.Add(affinityGameplayMajorHisshos   );
+            _settingGroup.Add(affinityGameplayUmbralChoir    );
         }
         public GameplayAffinity GetRandomGameplayAffinity(List<int> iExclusionList, int iPointValueLessThan)
         {

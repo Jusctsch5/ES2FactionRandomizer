@@ -10,9 +10,9 @@ namespace ES2FactionRandomizer.Definitions.Traits
     {
         GovernmentDemocracy,
         GovernmentDictatorship,
-        GovernmentFederation,
+        GovernmentEmpire,
         GovernmentRepublic,
-        GovernmentAutocracy,
+        GovernmentDictatorshipCravers,
     }
 
     public class Government : FactionSetting
@@ -30,9 +30,9 @@ namespace ES2FactionRandomizer.Definitions.Traits
         {
             _settingGroup.Add(new Government(GovernmentType.GovernmentDemocracy, 10));
             _settingGroup.Add(new Government(GovernmentType.GovernmentDictatorship, 10));
-            _settingGroup.Add(new Government(GovernmentType.GovernmentFederation, 10));
+            _settingGroup.Add(new Government(GovernmentType.GovernmentEmpire, 10)); // federation
             _settingGroup.Add(new Government(GovernmentType.GovernmentRepublic, 10));
-            _settingGroup.Add(new Government(GovernmentType.GovernmentAutocracy, 10));
+            _settingGroup.Add(new Government(GovernmentType.GovernmentDictatorshipCravers, 10)); // Autocracy
         }
         public Government GetRandomGovernment(List<int> iExclusionList, int iPointValueLessThan)
         {

@@ -16,7 +16,6 @@ namespace ES2FactionRandomizer.Definitions.Traits
         FactionTraitTechnologyDefinitionEmpireDevelopment2        ,
         FactionTraitTechnologyDefinitionMilitary1                 ,
         FactionTraitTechnologyDefinitionMilitary2                 ,
-        // FactionTraitTechnologyDefinitionEmpireDevelopment1Horatio
     }
 
     public class Tech : FactionSetting

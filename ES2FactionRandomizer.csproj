@@ -69,11 +69,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RandomFaction\FactionNames.cs" />
-    <Compile Include="RandomFaction\Preferences.cs" />
-    <Compile Include="RandomFaction\Randomizer.cs" />
-    <Compile Include="RandomFaction\RandomizerMethods\GreedyMethod.cs" />
-    <Compile Include="RandomFaction\RandomizerMethods\RandomizerMethod.cs" />
+    <Compile Include="FactionCreator\FactionNames.cs" />
+    <Compile Include="FactionCreator\Preferences.cs" />
+    <Compile Include="FactionCreator\FactionCreator.cs" />
+    <Compile Include="FactionCreator\RandomizerMethods\GreedyMethod.cs" />
+    <Compile Include="FactionCreator\RandomizerMethods\RandomizerMethod.cs" />
     <Compile Include="Utility\RandomUtil.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -9,147 +9,151 @@ namespace ES2FactionRandomizer.Definitions.Traits
     public enum FactionTraitType
     {
         // Base Game
-        FactionTraitAceSenatorsTitle,
-        FactionTraitAmateurExecutivesTitle,
-        FactionTraitReducedTaxesTitle,
-        FactionTraitApatheticColonistsTitle,
-        FactionTraitBeamSpecializationTitle,
-        FactionTraitBigBrothersTitle,
-        FactionTraitBigFleets1Title,
-        FactionTraitBigFleets2Title,
-        FactionTraitBigSpenders1Title,
-        FactionTraitBigSpenders2Title,
-        FactionTraitBlackThumb1Title,
-        FactionTraitBlackThumb2Title,
-        FactionTraitBlockadeBreakersTitle,
-        FactionTraitBrilliantStrategists1Title,
-        FactionTraitBrilliantStrategists2Title,
-        FactionTraitBuilders1Title,
-        FactionTraitBuilders2Title,
-        FactionTraitBuilders3Title,
-        FactionTraitBurningColonizationTitle,
-        FactionTraitBusinessmen1Title,
-        FactionTraitBusinessmen2Title,
-        FactionTraitBusinessmen3Title,
-        FactionTraitCombatRookiesTitle,
-        FactionTraitCombatSpecialistsTitle,
-        FactionTraitConfidentTacticiansTitle,
-        FactionTraitContentCitizens1Title,
-        FactionTraitContentCitizens2Title,
-        FactionTraitCowards1Title,
-        FactionTraitCowards2Title,
-        FactionTraitCrowdedPlanets1Title,
-        FactionTraitCrowdedPlanets2Title,
-        FactionTraitCulturalists1Title,
-        FactionTraitCulturalists2Title,
-        FactionTraitDeadlyWeapons1Title,
-        FactionTraitDeadlyWeapons2Title,
-        FactionTraitDiligentWorkersTitle,
-        FactionTraitDisciplinedTitle,
-        FactionTraitDoubtfulTacticiansTitle,
-        FactionTraitDryFrozenColonizationTitle,
-        FactionTraitEfficientExplorer1Title,
-        FactionTraitEfficientExplorer2Title,
-        FactionTraitEternalWarTitle,
-        FactionTraitExpansionists1Title,
-        FactionTraitExpansionists2Title,
-        FactionTraitExtendedConsortiumTitle,
-        FactionTraitFactionTraitSmoothTalkersTitle,
-        FactionTraitUtopianInfrastructureTitle,
-        FactionTraitFastTraveler1Title,
-        FactionTraitFastTraveler2Title,
-        FactionTraitFearlessWarriors1Title,
-        FactionTraitFearlessWarriors2Title,
-        FactionTraitFeebleWarriors1Title,
-        FactionTraitFeebleWarriors2Title,
-        FactionTraitFerventColonists1Title,
-        FactionTraitFerventColonists2Title,
-        FactionTraitFierceVigilantesTitle,
-        FactionTraitFloodedTemperateColonizationTitle,
-        FactionTraitFrailVigilantesTitle,
-        FactionTraitFrozenColonizationTitle,
-        FactionTraitGasColonizationTitle,
-        FactionTraitGeneHunterTitle,
-        FactionTraitGrowthPlan1Title,
-        FactionTraitGrowthPlan2Title,
-        FactionTraitGrowthPlan3Title,
-        FactionTraitGuardiansTitle,
-        FactionTraitHotWetColonizationTitle,
-        FactionTraitHumaneWeaponsTitle,
-        FactionTraitIneptTradersTitle,
-        FactionTraitInimicalTitle,
-        FactionTraitKineticSpecializationTitle,
-        FactionTraitKingpinExecutivesTitle,
-        FactionTraitLaserSpecializationTitle,
-        FactionTraitLegendaryHeroes1Title,
-        FactionTraitLegendaryHeroes2Title,
-        FactionTraitLousySenatorsTitle,
-        FactionTraitLuxuryConnoisseursTitle,
-        FactionTraitLuxuryIgnoramusesTitle,
-        FactionTraitMissileSpecializationTitle,
-        FactionTraitMutualUnderstanding1Title,
-        FactionTraitMutualUnderstanding2Title,
-        FactionTraitNaive1Title,
-        FactionTraitNaive2Title,
-        FactionTraitOptimalDefense1Title,
-        FactionTraitOptimalDefense2Title,
-        FactionTraitOptimistic1Title,
-        FactionTraitOptimistic2Title,
-        FactionTraitPatriots1Title,
-        FactionTraitPatriots2Title,
-        FactionTraitPerfectGenes1Title,
-        FactionTraitPerfectGenes2Title,
-        FactionTraitPessimistic1Title,
-        FactionTraitPessimistic2Title,
-        FactionTraitPoorStrategists1Title,
-        FactionTraitPoorStrategists2Title,
-        FactionTraitPriceOfPerfection1Title,
-        FactionTraitPriceOfPerfection2Title,
-        FactionTraitProneToAgitationTitle,
-        FactionTraitPushovers1Title,
-        FactionTraitPushovers2Title,
-        FactionTraitScanningTitle,
-        FactionTraitScientists1Title,
-        FactionTraitScientists2Title,
-        FactionTraitScientists3Title,
-        FactionTraitSkillfulTradersTitle,
-        FactionTraitSlowTraveler1Title,
-        FactionTraitSlowTraveler2Title,
-        FactionTraitSocialChameleonsTitle,
-        FactionTraitSpaceCadets1Title,
-        FactionTraitSpaceCadets2Title,
-        FactionTraitStartWithHyperiumTitle,
-        FactionTraitStartWithNegativeAnomalyTitle,
-        FactionTraitStartWithPositiveAnomalyTitle,
-        FactionTraitStartWithTitaniumTitle,
-        FactionTraitSubOptimalDefenseTitle,
-        FactionTraitTemperateColonizationTitle,
-        FactionTraitUniqueDictatorshipTitle,
-        FactionTraitUnskilledBuilders1Title,
-        FactionTraitUnskilledBuilders2Title,    
-        FactionTraitSacredTraditionTitle,                                    // Hissho (DLC2)
-        FactionTraitHisshosFestivalsTitle,
-        FactionTraitMiningExpertsTitle,
-        FactionTraitPirateHatersTitle,
-        FactionTraitJuggernautSpecialistsTitle,
-        FactionTraitStartWithJuggernautTitle,
-        FactionTraitReducedManpowerFromFoodTitle,                            // Umbral Choir (DLC3)
-        FactionTraitManpowerFromProcessingPowerTitle,
-        FactionTraitBonusHackingRoutesTitle,
-        FactionTraitBonusHackingSpeedTitle,
-        FactionTraitNativelyInvisibleShipsTitle,
-        FactionTraitProcessingPowerFromTraitorsTitle,
-        FactionTraitTradePenaltyTitle,
-        FactionTraitLuxuryCostModifierTitle,
-        FactionTraitAntiExpansionistsTitle
+        FactionTraitAceSenators,
+        FactionTraitAmateurExecutives,
+        FactionTraitReducedTaxes,
+        FactionTraitApatheticColonists,
+        FactionTraitBeamSpecialization,
+        FactionTraitBigBrothers,
+        FactionTraitBigFleets1,
+        FactionTraitBigFleets2,
+        FactionTraitBigSpenders1,
+        FactionTraitBigSpenders2,
+        FactionTraitBlackThumb1,
+        FactionTraitBlackThumb2,
+        FactionTraitBlockadeBreakers,
+        FactionTraitBrilliantStrategists1,
+        FactionTraitBrilliantStrategists2,
+        FactionTraitBuilders1,
+        FactionTraitBuilders2,
+        FactionTraitBuilders3,
+        FactionTraitBurningColonization,
+        FactionTraitBusinessmen1,
+        FactionTraitBusinessmen2,
+        FactionTraitBusinessmen3,
+        FactionTraitCombatRookies,
+        FactionTraitCombatSpecialists,
+        FactionTraitConfidentTacticians,
+        FactionTraitContentCitizens1,
+        FactionTraitContentCitizens2,
+        FactionTraitCowards1,
+        FactionTraitCowards2,
+        FactionTraitCrowdedPlanets1,
+        FactionTraitCrowdedPlanets2,
+        FactionTraitCulturalists1,
+        FactionTraitCulturalists2,
+        FactionTraitDeadlyWeapons1,
+        FactionTraitDeadlyWeapons2,
+        FactionTraitDiligentWorkers,
+        FactionTraitDisciplined,
+        FactionTraitDoubtfulTacticians,
+        FactionTraitDryFrozenColonization,
+        FactionTraitEfficientExplorer1,
+        FactionTraitEfficientExplorer2,
+        FactionTraitEternalWar,
+        FactionTraitExpansionists1,
+        FactionTraitExpansionists2,
+        FactionTraitExtendedConsortium,
+        FactionTraitFactionTraitSmoothTalkers,
+        FactionTraitUtopianInfrastructure,
+        FactionTraitFastTraveler1,
+        FactionTraitFastTraveler2,
+        FactionTraitFearlessWarriors1,
+        FactionTraitFearlessWarriors2,
+        FactionTraitFeebleWarriors1,
+        FactionTraitFeebleWarriors2,
+        FactionTraitFerventColonists1,
+        FactionTraitFerventColonists2,
+        FactionTraitFierceVigilantes,
+        FactionTraitFloodedTemperateColonization,
+        FactionTraitFrailVigilantes,
+        FactionTraitFrozenColonization,
+        FactionTraitGasColonization,
+        FactionTraitGeneHunter,
+        FactionTraitGrowthPlan1,
+        FactionTraitGrowthPlan2,
+        FactionTraitGrowthPlan3,
+        FactionTraitGuardians,
+        FactionTraitHotWetColonization,
+        FactionTraitHumaneWeapons,
+        FactionTraitIneptTraders,
+        FactionTraitInimical,
+        FactionTraitKineticSpecialization,
+        FactionTraitKingpinExecutives,
+        FactionTraitLaserSpecialization,
+        FactionTraitLegendaryHeroes1,
+        FactionTraitLegendaryHeroes2,
+        FactionTraitLousySenators,
+        FactionTraitLuxuryConnoisseurs,
+        FactionTraitLuxuryIgnoramuses,
+        FactionTraitMissileSpecialization,
+        FactionTraitMutualUnderstanding1,
+        FactionTraitMutualUnderstanding2,
+        FactionTraitNaive1,
+        FactionTraitNaive2,
+        FactionTraitOptimalDefense1,
+        FactionTraitOptimalDefense2,
+        FactionTraitOptimistic1,
+        FactionTraitOptimistic2,
+        FactionTraitPatriots1,
+        FactionTraitPatriots2,
+        FactionTraitPerfectGenes1,
+        FactionTraitPerfectGenes2,
+        FactionTraitPessimistic1,
+        FactionTraitPessimistic2,
+        FactionTraitPoorStrategists1,
+        FactionTraitPoorStrategists2,
+        FactionTraitPriceOfPerfection1,
+        FactionTraitPriceOfPerfection2,
+        FactionTraitProneToAgitation,
+        FactionTraitPushovers1,
+        FactionTraitPushovers2,
+        FactionTraitScanning,
+        FactionTraitScientists1,
+        FactionTraitScientists2,
+        FactionTraitScientists3,
+        FactionTraitSkillfulTraders,
+        FactionTraitSlowTraveler1,
+        FactionTraitSlowTraveler2,
+        FactionTraitSocialChameleons,
+        FactionTraitSpaceCadets1,
+        FactionTraitSpaceCadets2,
+        FactionTraitStartWithHyperium,
+        FactionTraitStartWithNegativeAnomaly,
+        FactionTraitStartWithPositiveAnomaly,
+        FactionTraitStartWithTitanium,
+        FactionTraitCorsairs,
+        FactionTraitCoreWorlds,
+        FactionTraitFactionTraitManualHomeSystem,
+        FactionTraitSubOptimalDefense,
+        FactionTraitTemperateColonization,
+        FactionTraitUniqueDictatorship,
+        FactionTraitUnskilledBuilders1,
+        FactionTraitUnskilledBuilders2,    
+        FactionTraitSacredTradition,                                    // Hissho (DLC2)
+        FactionTraitHisshosFestivals,
+        FactionTraitMiningExperts,
+        FactionTraitPirateHaters,
+        FactionTraitJuggernautSpecialists,
+        FactionTraitStartWithJuggernaut,
+        FactionTraitReducedManpowerFromFood,                            // Umbral Choir (DLC3)
+        FactionTraitManpowerFromProcessingPower,
+        FactionTraitBonusHackingRoutes,
+        FactionTraitBonusHackingSpeed,
+        FactionTraitNativelyInvisibleShips,
+        FactionTraitNativeObliteratorProtection,
+        FactionTraitProcessingPowerFromTraitors,
+        FactionTraitTradePenalty,
+        FactionTraitLuxuryCostModifier,
+        FactionTraitAntiExpansionists
 
         // Nakalim (DLC4)
         /*
-        FactionTraitTechnologicalHeadStartTitle                ,
-        FactionTraitScienceReductionTitle                      ,
-        FactionTraitMinorBonusDamageOnAcademyTitle             ,
-        FactionTraitMinorBonusContributionToAcademyTitle       ,
-        FactionTraitMinorOracularsTitle
+        FactionTraitTechnologicalHeadStart                ,
+        FactionTraitScienceReduction                      ,
+        FactionTraitMinorBonusDamageOnAcademy             ,
+        FactionTraitMinorBonusContributionToAcademy       ,
+        FactionTraitMinorOraculars
         */
 
     }
@@ -161,148 +165,259 @@ namespace ES2FactionRandomizer.Definitions.Traits
             _type = iType;
         }
         public FactionTraitType _type { get; set; }
+
+        
     }
     public class FactionTraitGroup : FactionSettingGroup
     {
         public void Initialize()
         {
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitAceSenatorsTitle, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitReducedTaxesTitle, 10)); // Alternative Imports
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitAmateurExecutivesTitle, -5));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitApatheticColonistsTitle, -5));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBigBrothersTitle, 5)); // Big Brothers
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBigFleets1Title, 15));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBigFleets2Title, 25));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBigSpenders1Title, -5));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBigSpenders2Title, -10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBlackThumb1Title, -5)); // opp growth plan
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBlackThumb2Title, -10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBlockadeBreakersTitle, 15));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBrilliantStrategists1Title, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBrilliantStrategists2Title, 20));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBuilders1Title, 10)); // Constructionists
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBuilders2Title, 25)); // Constructionists II
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBuilders3Title, 40)); // Constructionists III
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBusinessmen1Title, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBusinessmen2Title, 25));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBusinessmen3Title, 40));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCombatRookiesTitle, -10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCombatSpecialistsTitle, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitConfidentTacticiansTitle, 5));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitContentCitizens1Title, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitContentCitizens2Title, 15));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCowards1Title, -5));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCowards2Title, -10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCrowdedPlanets1Title, 15));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCrowdedPlanets2Title, 40));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCulturalists1Title, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCulturalists2Title, 20));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitDeadlyWeapons1Title, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitDeadlyWeapons2Title, 20));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitDisciplinedTitle, 5));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitDoubtfulTacticiansTitle, -5));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitEfficientExplorer1Title, 5));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitEfficientExplorer2Title, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitEternalWarTitle, -15));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitExpansionists1Title, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitExpansionists2Title, 25));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitExtendedConsortiumTitle, 15));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFactionTraitSmoothTalkersTitle, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitUtopianInfrastructureTitle, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFastTraveler1Title, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFastTraveler2Title, 25));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFearlessWarriors1Title, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFearlessWarriors2Title, 20));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFeebleWarriors1Title, -5)); // opp. fearless warriors
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFeebleWarriors2Title, -10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFerventColonists1Title, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFerventColonists2Title, 15));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitGrowthPlan1Title, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitGrowthPlan2Title, 25));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitGrowthPlan3Title, 40));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitGuardiansTitle, 40));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitHumaneWeaponsTitle, -5)); // opp. deadly weapons
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitIneptTradersTitle, 10)); // opp. skilled traders
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitInimicalTitle, 10)); // biophobic
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitKingpinExecutivesTitle, 10)); // opp. Amateur Executives
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitLegendaryHeroes1Title, 15));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitLegendaryHeroes2Title, 30));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitLousySenatorsTitle, -5)); // opp. Ace senators
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitLuxuryConnoisseursTitle, 10)); // oop. Luxury Ignoramuses
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitLuxuryIgnoramusesTitle, -5));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitMutualUnderstanding1Title, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitMutualUnderstanding2Title, 15));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitNaive1Title, 5)); // Harmonious
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitNaive2Title, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitOptimalDefense1Title, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitOptimalDefense2Title, 20));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitOptimistic1Title, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitOptimistic2Title, 25));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPatriots1Title, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPatriots2Title, 15));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPerfectGenes1Title, 5));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPerfectGenes2Title, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPessimistic1Title, -10)); // Vexed I, opp. Optimistic
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPessimistic2Title, -25));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPoorStrategists1Title, -5)); // opp. Brilliant Strategists
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPoorStrategists2Title, -10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPriceOfPerfection1Title, -5));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPriceOfPerfection2Title, -10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitProneToAgitationTitle, -5));  // opp. Disciplined
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPushovers1Title, -5));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPushovers2Title, -10));// opp. Culturalists
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitScanningTitle, 25)); // Pathfinder
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitScientists1Title, 10)); // rational minds
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitScientists2Title, 25));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitScientists3Title, 40));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitSkillfulTradersTitle, 20)); // Inept Traders
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitSlowTraveler1Title, -10)); // wary Travelers opp. Fast traveler
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitSlowTraveler2Title, -25));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitSocialChameleonsTitle, 15));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitSpaceCadets1Title, -5)); // rational minds
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitSpaceCadets2Title, -10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitStartWithNegativeAnomalyTitle, 10)); // strange but bad. opp strange but good
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitStartWithPositiveAnomalyTitle, 10)); // strange but good. opp strange but bad
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitStartWithHyperiumTitle, 10)); // hyperium mine
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitStartWithTitaniumTitle, 10)); // titanium mine
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitSubOptimalDefenseTitle, -5)); // opp. optimal defense
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitUnskilledBuilders1Title, -5)); // opp.  constructionists
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitUnskilledBuilders2Title, -10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitAceSenators, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitReducedTaxes, 10)); // Alternative Imports
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitAmateurExecutives, -5));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitApatheticColonists, -5));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBigBrothers, 5)); // Big Brothers
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBigFleets1, 15));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBigFleets2, 25));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBigSpenders1, -5));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBigSpenders2, -10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBlackThumb1, -5)); // opp growth plan
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBlackThumb2, -10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBlockadeBreakers, 15));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBrilliantStrategists1, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBrilliantStrategists2, 20));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBuilders1, 10)); // Constructionists
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBuilders2, 25)); // Constructionists II
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBuilders3, 40)); // Constructionists III
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBusinessmen1, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBusinessmen2, 25));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBusinessmen3, 40));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCombatRookies, -10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCombatSpecialists, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitConfidentTacticians, 5));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitContentCitizens1, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitContentCitizens2, 15));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCowards1, -5));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCowards2, -10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCrowdedPlanets1, 15));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCrowdedPlanets2, 40));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCulturalists1, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCulturalists2, 20));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitDeadlyWeapons1, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitDeadlyWeapons2, 20));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitDisciplined, 5));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitDoubtfulTacticians, -5));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitEfficientExplorer1, 5));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitEfficientExplorer2, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitEternalWar, -15));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitExpansionists1, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitExpansionists2, 25));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitExtendedConsortium, 15));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFactionTraitSmoothTalkers, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitUtopianInfrastructure, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFastTraveler1, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFastTraveler2, 25));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFearlessWarriors1, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFearlessWarriors2, 20));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFeebleWarriors1, -5)); // opp. fearless warriors
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFeebleWarriors2, -10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFerventColonists1, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFerventColonists2, 15));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitGrowthPlan1, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitGrowthPlan2, 25));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitGrowthPlan3, 40));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitGuardians, 40));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitHumaneWeapons, -5)); // opp. deadly weapons
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitIneptTraders, -10)); // opp. skilled traders
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitInimical, 10)); // biophobic
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitKingpinExecutives, 10)); // opp. Amateur Executives
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitLegendaryHeroes1, 15));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitLegendaryHeroes2, 30));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitLousySenators, -5)); // opp. Ace senators
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitLuxuryConnoisseurs, 10)); // oop. Luxury Ignoramuses
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitLuxuryIgnoramuses, -5));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitMutualUnderstanding1, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitMutualUnderstanding2, 15));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitNaive1, 5)); // Harmonious
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitNaive2, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitOptimalDefense1, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitOptimalDefense2, 20));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitOptimistic1, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitOptimistic2, 25));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPatriots1, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPatriots2, 15));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPerfectGenes1, 5));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPerfectGenes2, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPessimistic1, -10)); // Vexed I, opp. Optimistic
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPessimistic2, -25));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPoorStrategists1, -5)); // opp. Brilliant Strategists
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPoorStrategists2, -10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPriceOfPerfection1, -5));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPriceOfPerfection2, -10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitProneToAgitation, -5));  // opp. Disciplined
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPushovers1, -5));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPushovers2, -10));// opp. Culturalists
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitScanning, 25)); // Pathfinder
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitScientists1, 10)); // rational minds
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitScientists2, 25));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitScientists3, 40));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitSkillfulTraders, 20)); // Inept Traders
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitSlowTraveler1, -10)); // wary Travelers opp. Fast traveler
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitSlowTraveler2, -25));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitSocialChameleons, 15));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitSpaceCadets1, -5)); // rational minds
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitSpaceCadets2, -10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitStartWithNegativeAnomaly, 10)); // strange but bad. opp strange but good
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitStartWithPositiveAnomaly, 10)); // strange but good. opp strange but bad
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitStartWithHyperium, 10)); // hyperium mine
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitStartWithTitanium, 10)); // titanium mine
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCorsairs, 5));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCoreWorlds, 10)); // Core Worlds
             
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitSacredTraditionTitle, 10));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitHisshosFestivalsTitle, 10)); // observances
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitMiningExpertsTitle, 5)); // Resource Recoverers
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPirateHatersTitle, 5));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitJuggernautSpecialistsTitle, 5)); // Behemoth Builders
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitStartWithJuggernautTitle, 10)); // Behemoth Discoverer
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFactionTraitManualHomeSystem, 10));
+
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitSubOptimalDefense, -5)); // opp. optimal defense
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitUnskilledBuilders1, -5)); // opp.  constructionists
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitUnskilledBuilders2, -10));
+            
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitSacredTradition, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitHisshosFestivals, 10)); // observances
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitMiningExperts, 5)); // Resource Recoverers
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitPirateHaters, 5));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitJuggernautSpecialists, 5)); // Behemoth Builders
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitStartWithJuggernaut, 10)); // Behemoth Discoverer
              
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitReducedManpowerFromFoodTitle, -5)); // Immaterial Population
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitManpowerFromProcessingPowerTitle, 10)); // Dark Matter Manipulators
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBonusHackingRoutesTitle, 5)); // Organic Network
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBonusHackingSpeedTitle, 10)); // Twitch Infiltrators
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitNativelyInvisibleShipsTitle, 10)); // Ghosts
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitProcessingPowerFromTraitorsTitle, 10)); // Exploited Sleepers
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitTradePenaltyTitle, 10)); // Fledgling Traders
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitLuxuryCostModifierTitle, -10)); // Expensive Tastes
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitAntiExpansionistsTitle, -20)); // Stay-at-Home
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitReducedManpowerFromFood, -5)); // Immaterial Population
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitManpowerFromProcessingPower, 10)); // Dark Matter Manipulators
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBonusHackingRoutes, 5)); // Organic Network
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitBonusHackingSpeed, 10)); // Twitch Infiltrators
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitNativelyInvisibleShips, 10)); // Ghosts
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitNativeObliteratorProtection, 10)); // Resilient            
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitProcessingPowerFromTraitors, 10)); // Exploited Sleepers
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitTradePenalty, 10)); // Fledgling Traders
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitLuxuryCostModifier, -10)); // Expensive Tastes
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitAntiExpansionists, -20)); // Stay-at-Home
 
-            //_factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitDiligentWorkersTitle                 ,   10));
-            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitFierceVigilantesTitle                ,   10));
-            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitFrailVigilantesTitle                 ,   10));
-            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitUniqueDictatorshipTitle              ,   10)); // Absolute totalitatianisms
+            //_factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitDiligentWorkers                 ,   10));
+            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitFierceVigilantes                ,   10));
+            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitFrailVigilantes                 ,   10));
+            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitUniqueDictatorship              ,   10)); // Absolute totalitatianisms
 
-            //_factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitBeamSpecializationTitle              ,   10)); // Beam weapons???
-            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitKineticSpecializationTitle           ,   10)); //  Kinetic weapons
-            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitLaserSpecializationTitle             ,   10));
-            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitMissileSpecializationTitle           ,   10));
+            //_factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitBeamSpecialization              ,   10)); // Beam weapons???
+            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitKineticSpecialization           ,   10)); //  Kinetic weapons
+            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitLaserSpecialization             ,   10));
+            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitMissileSpecialization           ,   10));
 
-            //_factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitBurningColonizationTitle             ,   10)); // Hot Blooded
-            //_factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitDryFrozenColonizationTitle           ,   10)); // Don't fear the freezer
-            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitFloodedTemperateColonizationTitle    ,   10));
-            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitFrozenColonizationTitle              ,   10));
-            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitGasColonizationTitle                 ,   10));
-            //_factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitHotWetColonizationTitle              ,   10));
-            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitTemperateColonizationTitle           ,   10));
+            //_factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitBurningColonization             ,   10)); // Hot Blooded
+            //_factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitDryFrozenColonization           ,   10)); // Don't fear the freezer
+            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitFloodedTemperateColonization    ,   10));
+            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitFrozenColonization              ,   10));
+            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitGasColonization                 ,   10));
+            //_factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitHotWetColonization              ,   10));
+            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitTemperateColonization           ,   10));
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitAceSenators,
+                                           (int)FactionTraitType.FactionTraitLousySenators });
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitApatheticColonists,
+                                           (int)FactionTraitType.FactionTraitFerventColonists1,
+                                           (int)FactionTraitType.FactionTraitFerventColonists2 });
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitAmateurExecutives, 
+                                           (int)FactionTraitType.FactionTraitKingpinExecutives });
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitBigFleets1, 
+                                           (int)FactionTraitType.FactionTraitBigFleets2 });
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitBigSpenders1,
+                                           (int)FactionTraitType.FactionTraitBigSpenders2,
+                                           (int)FactionTraitType.FactionTraitBusinessmen1,
+                                           (int)FactionTraitType.FactionTraitBusinessmen2,
+                                           (int)FactionTraitType.FactionTraitBusinessmen3 });
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitGrowthPlan1,
+                                           (int)FactionTraitType.FactionTraitGrowthPlan2,
+                                           (int)FactionTraitType.FactionTraitGrowthPlan3,
+                                           (int)FactionTraitType.FactionTraitBlackThumb1,
+                                           (int)FactionTraitType.FactionTraitBlackThumb2});
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitBrilliantStrategists1,
+                                           (int)FactionTraitType.FactionTraitBrilliantStrategists2,
+                                           (int)FactionTraitType.FactionTraitPoorStrategists1,
+                                           (int)FactionTraitType.FactionTraitPoorStrategists2});
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitConfidentTacticians,
+                                           (int)FactionTraitType.FactionTraitDoubtfulTacticians});
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitBuilders1,
+                                           (int)FactionTraitType.FactionTraitBuilders2,
+                                           (int)FactionTraitType.FactionTraitBuilders3,
+                                           (int)FactionTraitType.FactionTraitUnskilledBuilders1,
+                                           (int)FactionTraitType.FactionTraitUnskilledBuilders2});
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitContentCitizens1,
+                                           (int)FactionTraitType.FactionTraitContentCitizens2});
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitCorsairs,
+                                           (int)FactionTraitType.FactionTraitPirateHaters});
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitCombatRookies,
+                                           (int)FactionTraitType.FactionTraitCombatSpecialists});
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitDeadlyWeapons1,
+                                           (int)FactionTraitType.FactionTraitDeadlyWeapons2,
+                                           (int)FactionTraitType.FactionTraitHumaneWeapons});
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitEfficientExplorer1,
+                                           (int)FactionTraitType.FactionTraitEfficientExplorer2});
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitEfficientExplorer1,
+                                           (int)FactionTraitType.FactionTraitEfficientExplorer2});
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitExpansionists1,
+                                           (int)FactionTraitType.FactionTraitExpansionists2});
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitFastTraveler1,
+                                           (int)FactionTraitType.FactionTraitFastTraveler2,
+                                           (int)FactionTraitType.FactionTraitSlowTraveler1,
+                                           (int)FactionTraitType.FactionTraitSlowTraveler2});
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitFearlessWarriors1,
+                                           (int)FactionTraitType.FactionTraitFearlessWarriors2,
+                                           (int)FactionTraitType.FactionTraitFeebleWarriors1,
+                                           (int)FactionTraitType.FactionTraitFeebleWarriors2});
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitNaive1,
+                                           (int)FactionTraitType.FactionTraitNaive2 });
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitIneptTraders,
+                                           (int)FactionTraitType.FactionTraitSkillfulTraders});
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitLegendaryHeroes1,
+                                           (int)FactionTraitType.FactionTraitLegendaryHeroes2});
+            
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitLuxuryConnoisseurs,
+                                           (int)FactionTraitType.FactionTraitLuxuryIgnoramuses});
+
+
+            AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitOptimalDefense1,
+                                           (int)FactionTraitType.FactionTraitOptimalDefense2,
+                                           (int)FactionTraitType.FactionTraitSubOptimalDefense});
+
+            AddExclusivity(new List<int> {(int)FactionTraitType.FactionTraitOptimistic1,
+                                          (int)FactionTraitType.FactionTraitOptimistic2,
+                                          (int)FactionTraitType.FactionTraitPessimistic1,
+                                          (int)FactionTraitType.FactionTraitPessimistic2});
+
+            AddExclusivity(new List<int> {(int)FactionTraitType.FactionTraitFactionTraitManualHomeSystem,
+                                          (int)FactionTraitType.FactionTraitFerventColonists1,
+                                          (int)FactionTraitType.FactionTraitFerventColonists2,
+                                          (int)FactionTraitType.FactionTraitApatheticColonists});
+
+
+
+            
+
         }
         public FactionTrait GetRandomFactionTrait(List<int> iExclusionList, int iPointValueLessThan)
         {

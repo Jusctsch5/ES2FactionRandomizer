@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace ES2FactionRandomizer.RandomFaction
 {
-    public class Randomizer
+    public class FactionCreator
     {
-        public Randomizer(RandomizerMethod iRandomMethod, TraitDefinitions iTraitDefinition, Preferences iPreferences)
+        public FactionCreator(RandomizerMethod iRandomMethod, TraitDefinitions iTraitDefinition, Preferences iPreferences)
         {
             _randomizerMethod = iRandomMethod;
             _definitions = iTraitDefinition;

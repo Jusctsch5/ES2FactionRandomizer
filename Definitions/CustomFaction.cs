@@ -28,7 +28,6 @@ namespace ES2FactionRandomizer
             _tech = new List<Tech>();
             _factionName = "";
         }
-
         public CustomFaction(GameplayAffinity            iGameplay,
                              VisualAffinity              iVisual,
                              List<FactionTrait>          iFactionTraits,
@@ -71,6 +70,7 @@ namespace ES2FactionRandomizer
             score += _secondaryPolitics2 != null ? _secondaryPolitics2._scoreModifier : 0;
             return score;
         }
+
         public int CalculateTraitScore()
         {
             int score = 0;
@@ -89,6 +89,18 @@ namespace ES2FactionRandomizer
             }
 
             return score;
+        }
+
+        public int CalculateTraits()
+        {
+            int traits = 0;
+            traits += _tech.Count();
+            traits += _factionTraits.Count();
+            if (_minorPopulation != null)
+            {
+                traits++;
+            }
+            return traits;
         }
 
         public int GetTraitScoreLimit()
@@ -120,8 +132,15 @@ namespace ES2FactionRandomizer
             {
                 factionStr += "\n\tTrait:" + factionTraits._type.ToString();
             }
+
+            factionStr += "\nPopulation Score: " + CalculatePopulationScore() + "/60";
+            factionStr += "\nTrait Score: " + CalculateTraitScore() + "/" + GetTraitScoreLimit();
+            factionStr += "\nTrait Count: " + CalculateTraits() + "/8";
+            factionStr += "\n\n";
             return factionStr;
         }
+
+
 
         public GameplayAffinity _gameplayAffinity { get; set; }
         public VisualAffinity   _visualAffinity { get; set; }
@@ -137,56 +156,185 @@ namespace ES2FactionRandomizer
         public Government _government { get; set; }
         public List<Tech> _tech { get; set; }
         public string _factionName { get; set; }
+        public string _visualAffinityUuidStr { get; set; }
+        public string _gameplayAffinityUuidStr { get; set; }
 
         public void Initialize()
         {
-            _factionName = FactionNames.GetRandomAdjective(_gameplayAffinity._type) + " " + FactionNames.GetRandomNoun(_visualAffinity._type);
+            _factionName = FactionNames.GetRandomAdjective(_gameplayAffinity._type) + FactionNames.GetRandomNoun(_visualAffinity._type);
+            _gameplayAffinityUuidStr = Guid.NewGuid().ToString();
+            _visualAffinityUuidStr = Guid.NewGuid().ToString();
+        }
+        
+        public string CreatePopulationXmlString()
+        {
+            string populationStr = @"
+<?xml version=""1.0"" encoding=""utf-8""?>
+<PopulationDefinition xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" AffinityName=""$VISUALAFFINITYUUID"" LocalizedName=""Custom Hissho"" UniquePopulationId=""0"">
+  <DefaultPolitics>
+    <Politics BaseScore=""1"" BaseTrend=""0"" PoliticsReference=""$POLITICS"" />
+  </DefaultPolitics>
+  <Trait Name=""$POLPRIM"" />
+  <Trait Name=""$POLSEC1"" />
+  <Trait Name=""$POLSEC2"" />
+  <Trait Name=""$POPMOD"" />
+  <Trait Name=""$POPPRIM"" />
+  <Trait Name=""$POPSEC"" />
+  <Trait Name=""$POPTRI"" />
+  <AffinityMapping Name=""$VISUALAFFINITY"" />
+  <GrowthBoostLuxuryOptions>
+    <Luxury>Luxury1</Luxury>
+    <Luxury>Luxury2</Luxury>
+    <Luxury>Luxury3</Luxury>
+    <Luxury>Luxury4</Luxury>
+    <Luxury>Luxury5</Luxury>
+    <Luxury>Luxury6</Luxury>
+    <Luxury>Luxury7</Luxury>
+    <Luxury>Luxury8</Luxury>
+  </GrowthBoostLuxuryOptions>
+</PopulationDefinition>";
+
+            populationStr = populationStr.Replace("$POLITICS", _primaryPolitics.GetPoliticsReference());
+            populationStr = populationStr.Replace("$VISUALAFFINITYUUID", _visualAffinityUuidStr);
+            populationStr = populationStr.Replace("$VISUALAFFINITY", _visualAffinity._jsonString);
+            populationStr = populationStr.Replace("$POLPRIM", _primaryPolitics._jsonString);
+            populationStr = populationStr.Replace("$POLSEC1", _secondaryPolitics1._jsonString);
+            populationStr = populationStr.Replace("$POLSEC2", _secondaryPolitics2._jsonString);
+            populationStr = populationStr.Replace("$POPMOD", _visualAffinity.GetPopulationModifierTrait());
+            populationStr = populationStr.Replace("$POPPRIM", _primaryPopulationModifier._jsonString);
+            populationStr = populationStr.Replace("$POPSEC", _secondaryPopulationModifier._jsonString);
+            populationStr = populationStr.Replace("$POPTRI", _tertiaryPopulationModifier._jsonString);
+            return populationStr;
         }
 
-        public string ExportToXmlString()
+        public string CreateFactionXmlString()
         {
-            string verbatimTestStr = @"
+            string factionStr = @"
 <?xml version=""1.0"" encoding=""utf - 8""?>
 <MajorFaction xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" Name=""$UUID"" Author=""Random"" Standard=""false"" Priority=""0"">
   <Affinity Name=""$GAMEPLAYAFFINITY"" />
   <Trait Name=""IsMajorFaction"" />
 $FACTIONTRAITS
+$TECHS
+$MINORPOP
+  <Trait Name=""$HOMEPLANET"" />
+  <Trait Name=""TraitCustomFaction"" />
   <TraitStartingSenate Name="""" SubCategory="""" Priority=""100"">
     <Prerequisites />
     <UnlockedAbstractShipDesigns />
     <Government Name=""$GOVERNMENT"" />
-    <PoliticsWeight Politics=""Politics01"" Weight=""0"" />
-    <PoliticsWeight Politics=""Politics02"" Weight=""0"" />
-    <PoliticsWeight Politics=""Politics03"" Weight=""2"" />
-    <PoliticsWeight Politics=""Politics04"" Weight=""0"" />
-    <PoliticsWeight Politics=""Politics05"" Weight=""0"" />
-    <PoliticsWeight Politics=""Politics06"" Weight=""1"" />
+$POLITICSWEIGHT
     <Cost>10</Cost>
   </TraitStartingSenate>
   <Bailiff Name=""DefaultMoneyBailiff"" />
   <Bailiff Name=""DefaultEmpirePointBailiff"" />
   <MajorPopulation Affinity=""$VISUALAFFINITY"" Count=""2"" />
-  <LocalizedDescription />
+  <LocalizedDescription>Herro.</LocalizedDescription>
   <LocalizedName>$FACTIONNAME</LocalizedName>
 </MajorFaction>";
 
-            verbatimTestStr = verbatimTestStr.Replace("$UUID", Guid.NewGuid().ToString());
-            verbatimTestStr = verbatimTestStr.Replace("$GAMEPLAYAFFINITY", _gameplayAffinity._jsonString);
-            verbatimTestStr = verbatimTestStr.Replace("$GOVERNMENT", _government._jsonString);
-            verbatimTestStr = verbatimTestStr.Replace("$VISUALAFFINITY", VisualAffinity.ConvertAffinityTypeToUuidStr(_visualAffinity._type));
+            factionStr = factionStr.Replace("$UUID", Guid.NewGuid().ToString());
+            factionStr = factionStr.Replace("$GAMEPLAYAFFINITY", _gameplayAffinity._jsonString);
+            factionStr = factionStr.Replace("$GOVERNMENT", _government._jsonString);
+            factionStr = factionStr.Replace("$HOMEPLANET", _homePlanet._jsonString);
+            if (_minorPopulation != null)
+            {
+                factionStr = factionStr.Replace("$MINORPOP", "  <Trait Name=\"" + _minorPopulation._jsonString+ "\" />");
+            }
+            else
+            {
+                factionStr = factionStr.Replace("$MINORPOP", "");
+            }
 
-            verbatimTestStr = verbatimTestStr.Replace("$FACTIONNAME", _factionName);
+            factionStr = factionStr.Replace("$VISUALAFFINITY", _visualAffinityUuidStr);
+            factionStr = factionStr.Replace("$FACTIONNAME", _factionName);
+            factionStr = factionStr.Replace("$POLITICSWEIGHT", createPoliticsWeightString());
 
             string traitXmlString = "";
+            var last = _factionTraits.Last();
             foreach (var trait in _factionTraits)
             {
-                traitXmlString += "  <Trait Name=\"" + trait._jsonString + "\" />\n";
+                traitXmlString += "  <Trait Name=\"" + trait._jsonString + "\" />";
+                if (trait != last)
+                {
+                    traitXmlString += System.Environment.NewLine;
+                }
             }
-            traitXmlString.TrimEnd(traitXmlString[traitXmlString.Length - 1]);
+            factionStr = factionStr.Replace("$FACTIONTRAITS", traitXmlString);
 
-            verbatimTestStr = verbatimTestStr.Replace("$FACTIONTRAITS", traitXmlString);
+            string techXmlString = "";
+            var lastTech = _tech.Last();
+            foreach (var tech in _tech)
+            {
+                techXmlString += "  <Trait Name=\"" + tech._jsonString + "\" />";
+                if (tech != lastTech)
+                {
+                    techXmlString += System.Environment.NewLine;
+                }
+            }
+            factionStr = factionStr.Replace("$TECHS", techXmlString);
 
-            return verbatimTestStr;
+            return factionStr;
+        }
+
+        private string createPoliticsWeightString()
+        {
+            string politicsWeightString = "";
+
+            switch (_primaryPolitics._type)
+            {
+                case PrimaryPoliticsType.PopulationPoliticalTraitIndustrialist:
+                 politicsWeightString = @"    <PoliticsWeight Politics=""Politics01"" Weight=""2"" />
+    <PoliticsWeight Politics=""Politics02"" Weight=""0"" />
+    <PoliticsWeight Politics=""Politics03"" Weight=""0"" />
+    <PoliticsWeight Politics=""Politics04"" Weight=""1"" />
+    <PoliticsWeight Politics=""Politics05"" Weight=""0"" />
+    <PoliticsWeight Politics=""Politics06"" Weight=""0"" />";
+
+                    break;
+                case PrimaryPoliticsType.PopulationPoliticalTraitPacifist:
+                    politicsWeightString = @"    <PoliticsWeight Politics=""Politics01"" Weight=""0"" /> 
+    <PoliticsWeight Politics=""Politics02"" Weight=""0"" />
+    <PoliticsWeight Politics=""Politics03"" Weight=""2"" />
+    <PoliticsWeight Politics=""Politics04"" Weight=""0"" />
+    <PoliticsWeight Politics=""Politics05"" Weight=""0"" />
+    <PoliticsWeight Politics=""Politics06"" Weight=""1"" />";
+                    break;
+                case PrimaryPoliticsType.PopulationPoliticalTraitScientific:
+                    politicsWeightString = @"    <PoliticsWeight Politics=""Politics01"" Weight=""0"" />
+    <PoliticsWeight Politics=""Politics02"" Weight=""2"" />
+    <PoliticsWeight Politics=""Politics03"" Weight=""0"" />
+    <PoliticsWeight Politics=""Politics04"" Weight=""0"" />
+    <PoliticsWeight Politics=""Politics05"" Weight=""1"" />
+    <PoliticsWeight Politics=""Politics06"" Weight=""0"" />";
+                    break;
+                case PrimaryPoliticsType.PopulationPoliticalTraitReligious:
+                    politicsWeightString = @"    <PoliticsWeight Politics=""Politics01"" Weight=""0"" />
+    <PoliticsWeight Politics=""Politics02"" Weight=""1"" />
+    <PoliticsWeight Politics=""Politics03"" Weight=""0"" />
+    <PoliticsWeight Politics=""Politics04"" Weight=""0"" />
+    <PoliticsWeight Politics=""Politics05"" Weight=""2"" />
+    <PoliticsWeight Politics=""Politics06"" Weight=""0"" />";
+                    break;
+                case PrimaryPoliticsType.PopulationPoliticalTraitMilitarist:
+                    politicsWeightString = @"    <PoliticsWeight Politics=""Politics01"" Weight=""0"" />
+    <PoliticsWeight Politics=""Politics02"" Weight=""0"" />
+    <PoliticsWeight Politics=""Politics03"" Weight=""1"" />
+    <PoliticsWeight Politics=""Politics04"" Weight=""0"" />
+    <PoliticsWeight Politics=""Politics05"" Weight=""0"" />
+    <PoliticsWeight Politics=""Politics06"" Weight=""2"" />";
+                    break;
+                case PrimaryPoliticsType.PopulationPoliticalTraitEcologist:
+                    politicsWeightString = @"    <PoliticsWeight Politics=""Politics01"" Weight=""1"" />
+    <PoliticsWeight Politics=""Politics02"" Weight=""0"" />
+    <PoliticsWeight Politics=""Politics03"" Weight=""0"" />
+    <PoliticsWeight Politics=""Politics04"" Weight=""2"" />
+    <PoliticsWeight Politics=""Politics05"" Weight=""0"" />
+    <PoliticsWeight Politics=""Politics06"" Weight=""0"" />";
+                    break;
+            }
+
+            return politicsWeightString;
         }
     }
 }

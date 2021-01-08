@@ -8,38 +8,39 @@ namespace ES2FactionRandomizer.Definitions.Traits
 {
     public enum SecondaryPopulationModifierType
     {
-        PopulationModifiersTraitHisshoSecondaryTitle                      ,
-        PopulationModifiersTraitBenthysSecondaryTitle                     ,
-        PopulationModifiersTraitBhagabasSecondaryTitle                    ,
-        PopulationModifiersTraitDeuyivansSecondaryTitle                   ,
-        PopulationModifiersTraitEydersSecondaryTitle                      ,
-        PopulationModifiersTraitGnashastsSecondaryTitle                   ,
-        PopulationModifiersTraitHaroshemsSecondaryTitle                   ,
-        PopulationModifiersTraitHisshosSecondaryTitle                     ,
-        PopulationModifiersTraitMavrosSecondaryTitle                      ,
-        PopulationModifiersTraitMezariSecondaryTitle                      ,
-        PopulationModifiersTraitNirisSecondaryTitle                       ,
-        PopulationModifiersTraitPilgrimsSecondaryTitle                    ,
-        PopulationModifiersTraitPulsosSecondaryTitle                      ,
-        PopulationModifiersTraitRemnantSecondaryTitle                     ,
-        PopulationModifiersTraitSecondaryDefenseFertileTitle              ,
-        PopulationModifiersTraitSecondaryDustMeagerTitle                  ,
-        PopulationModifiersTraitSecondaryHappinessHotTitle                ,
-        PopulationModifiersTraitSecondaryHappinessTemperateTitle          ,
-        PopulationModifiersTraitSecondaryIndustryColdTitle                ,
-        PopulationModifiersTraitSecondaryIndustryMeagerTitle              ,
-        PopulationModifiersTraitSecondaryScienceHotTitle                  ,
-        PopulationModifiersTraitSheredynSecondaryTitle                    ,
-        PopulationModifiersTraitTerransSecondaryTitle                     ,
-        PopulationModifiersTraitTikanansSecondaryTitle                    ,
-        PopulationModifiersTraitUnfallenSecondaryTitle                    ,
-        PopulationModifiersTraitVenetiansSecondaryTitle                   ,
-        PopulationModifiersTraitZvaliSecondaryTitle                       ,
-        PopulationModifiersTraitSecondaryAntiDepletion01Title             ,
-        PopulationModifiersTraitSecondaryHappinessSterileTitle            ,
-        PopulationModifiersTraitSecondaryIndustryFertileTitle             ,
-        PopulationModifiersTraitSecondaryStrategicToScience01Title        ,
-        PopulationModifiersTraitSecondaryGroundBattleAttackerDamage01Title,
+        PopulationModifiersTraitSecondaryNone,
+        PopulationModifiersTraitSecondaryScienceCold,
+        PopulationModifiersTraitSecondaryDustFertile,
+        PopulationModifiersTraitSecondaryInfluenceTemperate,
+        PopulationModifiersTraitSecondaryDefenseSterile,
+        PopulationModifiersTraitSecondaryHappinessHot,
+        PopulationModifiersTraitSecondaryFoodFertile02,
+        PopulationModifiersTraitSecondaryFoodSterile,
+        PopulationModifiersTraitSecondaryHappinessFertile,
+        PopulationModifiersTraitSecondaryIndustryHot,
+        PopulationModifiersTraitSecondaryFoodGas,
+        PopulationModifiersTraitSecondaryScienceAnomaly01,
+        PopulationModifiersTraitSecondaryScienceHappy,
+        PopulationModifiersTraitSecondaryManpowerFertile,
+        PopulationModifiersTraitSecondaryGroundBattleAttackerDamageFertile,
+        PopulationModifiersTraitSecondaryDustGas,
+        PopulationModifiersTraitSecondaryFoodFertile01,
+        PopulationModifiersTraitSecondaryDustHappy,
+        PopulationModifiersTraitSecondaryScienceAnomaly02,
+        PopulationModifiersTraitSecondaryIndustrySterile,
+        PopulationModifiersTraitSecondaryDustSterile,
+        PopulationModifiersTraitSecondaryHappinessTemperate,
+        PopulationModifiersTraitSecondaryIndustryCold,
+        PopulationModifiersTraitSecondaryScienceHot,
+        PopulationModifiersTraitSecondaryDefenseFertile,
+        PopulationModifiersTraitSecondaryIndustryMeager,
+        PopulationModifiersTraitSecondaryGroundBattleAttackerDamage01,
+        PopulationModifiersTraitSecondaryManpower,
+        PopulationModifiersTraitPrimaryInfluenceOnHot01,
+        PopulationModifiersTraitSecondaryAntiDepletion01,
+        PopulationModifiersTraitSecondaryHappinessSterile,
+        PopulationModifiersTraitSecondaryIndustryFertile,
+        PopulationModifiersTraitSecondaryStrategicToScience01,
     }
 
     public class SecondaryPopulationModifier : FactionSetting
@@ -54,37 +55,37 @@ namespace ES2FactionRandomizer.Definitions.Traits
     {
         public void Initialize()
         {
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitHisshoSecondaryTitle, 10)); // Serve With Honor
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitBenthysSecondaryTitle, 10)); // Euphorists
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitBhagabasSecondaryTitle, 10)); // Blissful Residents
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitDeuyivansSecondaryTitle, 5)); // Hydroponics Spec
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitEydersSecondaryTitle, 5)); // Catalyzation Specialists
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitGnashastsSecondaryTitle, 10)); // Rushless Defender
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitHaroshemsSecondaryTitle, 10)); // efficient farmers
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitHisshosSecondaryTitle, 5)); // Harshly-Trained Combatants
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitMavrosSecondaryTitle, 5)); // Hephaestian Workers
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitMezariSecondaryTitle, 5)); // Cryologists
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitNirisSecondaryTitle, 5)); // Prolific Farmers
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitPilgrimsSecondaryTitle, 5)); // Experimentalists
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitPulsosSecondaryTitle, 10)); // Anomaly Stalkers
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitRemnantSecondaryTitle, 5)); // TreasureHunters
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryDefenseFertileTitle, 5)); // Logisticians
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryDustMeagerTitle, 10)); // Dust Purists
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryHappinessHotTitle, 5)); // Warmhearted
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryHappinessTemperateTitle, 5)); // Naturalists
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryIndustryColdTitle, 5)); // Geothermal Specialists
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryIndustryMeagerTitle, 5)); // Self-Sustaining Laborers
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryScienceHotTitle, 5)); // Insulation Specialists
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitTerransSecondaryTitle, 5)); // Engaging Denizens
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitTikanansSecondaryTitle, 5)); // Bountiful Troops
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitUnfallenSecondaryTitle, 15)); // Bounteous Gardeners
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitVenetiansSecondaryTitle, 5)); // Dust Seekers
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitZvaliSecondaryTitle, 10)); // Scientistic Hobbyist
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryAntiDepletion01Title, 10)); // Planet Menders
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryHappinessSterileTitle, 10)); // Hardened Dwellers
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryIndustryFertileTitle, 10)); // Biomimetic Builders
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryStrategicToScience01Title, 15)); // Strategic Science
-            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryGroundBattleAttackerDamage01Title, 5)); // Public Minefields
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryScienceCold, 5));       
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryDustFertile, 5));       
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryInfluenceTemperate, 5));
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryDefenseSterile, 5));    
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryHappinessHot, 5));      
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryFoodFertile02, 15));    
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryFoodSterile, 10));      
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryHappinessFertile, 10)); 
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryIndustryHot, 5));       
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryFoodGas, 5));           
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryScienceAnomaly01, 5));  
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryScienceHappy, 10));     
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryManpowerFertile, 5));   
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryGroundBattleAttackerDamageFertile, 10));
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryDustGas, 5));           
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryFoodFertile01, 5));     
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryDustHappy, 5));         
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryScienceAnomaly02, 10)); 
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryIndustrySterile, 5));   
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryDustSterile, 10));      
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryHappinessTemperate, 5));
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryIndustryCold, 5));        
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryScienceHot, 5));          
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryDefenseFertile, 5));      
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryGroundBattleAttackerDamage01, 5));
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryManpower, 5));          
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitPrimaryInfluenceOnHot01, 5));    
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryAntiDepletion01, 10));  
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryHappinessSterile, 10)); 
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryIndustryFertile, 10));  
+            _settingGroup.Add(new SecondaryPopulationModifier(SecondaryPopulationModifierType.PopulationModifiersTraitSecondaryStrategicToScience01, 15)); 
         }
 
         public SecondaryPopulationModifier GetRandomSecondaryPopulationModifier(List<int> iExclusionList, int iPointValueLessThan)

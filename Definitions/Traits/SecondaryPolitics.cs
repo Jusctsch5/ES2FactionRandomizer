@@ -8,48 +8,44 @@ namespace ES2FactionRandomizer.Definitions.Traits
 {
     public enum SecondaryPoliticsType
     {
-        PopulationPoliticalTraitAggressiveTitle                 ,
-        PopulationPoliticalTraitAntiEcologistTitle              ,
-        PopulationPoliticalTraitAntiIndustrialistTitle          ,
-        PopulationPoliticalTraitAntiMilitaristTitle             ,
-        PopulationPoliticalTraitAntiPacifistTitle               ,
-        PopulationPoliticalTraitAntiReligiousTitle              ,
-        PopulationPoliticalTraitAntiScientistTitle              ,
-        PopulationPoliticalTraitAtheistTitle                    ,
-        PopulationPoliticalTraitCuriousTitle                    ,
-        PopulationPoliticalTraitDiplomatTitle                   ,
-        PopulationPoliticalTraitEcologistToIndustrialistTitle   ,
-        PopulationPoliticalTraitEcologistToMilitaristTitle      ,
-        PopulationPoliticalTraitEcologistToReligiousTitle       ,
-        PopulationPoliticalTraitEcologistToScienceTitle         ,
-        PopulationPoliticalTraitFanaticTitle                    ,
-        PopulationPoliticalTraitHedonistTitle                   ,
-        PopulationPoliticalTraitIndustrialistToPacifistTitle    ,
-        PopulationPoliticalTraitIndustrialistToReligiousTitle   ,
-        PopulationPoliticalTraitIndustryToScienceTitle          ,
-        PopulationPoliticalTraitMercifulTitle                   ,
-        PopulationPoliticalTraitMilitaristToEcologistTitle      ,
-        PopulationPoliticalTraitMilitaristToReligiousTitle      ,
-        PopulationPoliticalTraitMilitaristToScientificTitle     ,
-        PopulationPoliticalTraitOptimisedTitle                  ,
-        PopulationPoliticalTraitPacifistToEcologistTitle        ,
-        PopulationPoliticalTraitPacifistToIndustrialistTitle    ,
-        PopulationPoliticalTraitPiousTitle                      ,
-        PopulationPoliticalTraitPragmaticTitle                  ,
-        PopulationPoliticalTraitRelativistTitle                 ,
-        PopulationPoliticalTraitReligiousToEcologistTitle       ,
-        PopulationPoliticalTraitReligiousToIndustrialistTitle   ,
-        PopulationPoliticalTraitReligiousToMilitaristTitle      ,
-        PopulationPoliticalTraitReligiousToPacifistTitle        ,
-        PopulationPoliticalTraitReligiousToScientificTitle      ,
-        PopulationPoliticalTraitSagaciousTitle                  ,
-        PopulationPoliticalTraitScientificToEcologistTitle      ,
-        PopulationPoliticalTraitScientificToIndustrialistTitle  ,
-        PopulationPoliticalTraitScientificToPacifistTitle       ,
-        PopulationPoliticalTraitSearcherTitle                   ,
-        PopulationPoliticalTraitWarmongerTitle                  ,
-        PopulationPoliticalTraitWaryTitle                       ,
-        PopulationPoliticalTraitXenophobicTitle                 ,
+        PopulationPoliticalTraitNone                       ,
+        PopulationPoliticalTraitAggressive                 ,
+        PopulationPoliticalTraitAntiEcologist              ,
+        PopulationPoliticalTraitAntiIndustrialist          ,
+        PopulationPoliticalTraitAntiMilitarist             ,
+        PopulationPoliticalTraitAntiPacifist               ,
+        PopulationPoliticalTraitAntiReligious              ,
+        PopulationPoliticalTraitAntiScientist              ,
+        PopulationPoliticalTraitMilitaristToIndustrialist    ,
+        PopulationPoliticalTraitMilitaristToPacifist         ,
+        PopulationPoliticalTraitMilitaristToScientific       ,
+        PopulationPoliticalTraitMilitaristToEcologist        ,
+        PopulationPoliticalTraitMilitaristToReligious        ,
+        PopulationPoliticalTraitIndustrialistToMilitarist    ,
+        PopulationPoliticalTraitIndustrialistToPacifist      ,
+        PopulationPoliticalTraitIndustrialistToScientific    ,
+        PopulationPoliticalTraitIndustrialistToEcologist     ,
+        PopulationPoliticalTraitIndustrialistToReligious     ,
+        PopulationPoliticalTraitPacifistToMilitarist         ,
+        PopulationPoliticalTraitPacifistToIndustrialist      ,
+        PopulationPoliticalTraitPacifistToScientific         ,
+        PopulationPoliticalTraitPacifistToEcologist          ,
+        PopulationPoliticalTraitPacifistToReligious          ,
+        PopulationPoliticalTraitScientificToMilitarist       ,
+        PopulationPoliticalTraitScientificToIndustrialist    ,
+        PopulationPoliticalTraitScientificToPacifist         ,
+        PopulationPoliticalTraitScientificToEcologist        ,
+        PopulationPoliticalTraitScientificToReligious        ,
+        PopulationPoliticalTraitEcologistToMilitarist        ,
+        PopulationPoliticalTraitEcologistToIndustrialist     ,
+        PopulationPoliticalTraitEcologistToPacifist          ,
+        PopulationPoliticalTraitEcologistToScientific        ,
+        PopulationPoliticalTraitEcologistToReligious         ,
+        PopulationPoliticalTraitReligiousToMilitarist        ,
+        PopulationPoliticalTraitReligiousToIndustrialist     ,
+        PopulationPoliticalTraitReligiousToPacifist          ,
+        PopulationPoliticalTraitReligiousToScientific        ,
+        PopulationPoliticalTraitReligiousToEcologist         ,
     }
 
     public class SecondaryPolitics : FactionSetting
@@ -64,49 +60,44 @@ namespace ES2FactionRandomizer.Definitions.Traits
     {
         public void Initialize()
         {
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitAntiEcologistTitle, 10));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitAntiIndustrialistTitle, 10));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitAntiMilitaristTitle, 10));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitAntiPacifistTitle, 10));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitAntiReligiousTitle, 10));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitAntiScientistTitle, 10));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitAggressiveTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitAtheistTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitCuriousTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitDiplomatTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitEcologistToIndustrialistTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitEcologistToMilitaristTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitEcologistToReligiousTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitEcologistToScienceTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitFanaticTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitHedonistTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitIndustrialistToPacifistTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitIndustrialistToReligiousTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitIndustryToScienceTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitMercifulTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitMilitaristToEcologistTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitMilitaristToReligiousTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitMilitaristToScientificTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitOptimisedTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitPacifistToEcologistTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitPacifistToIndustrialistTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitPiousTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitPragmaticTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitRelativistTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitReligiousToEcologistTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitReligiousToIndustrialistTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitReligiousToMilitaristTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitReligiousToPacifistTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitReligiousToScientificTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitSagaciousTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitScientificToEcologistTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitScientificToIndustrialistTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitScientificToPacifistTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitSearcherTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitWarmongerTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitWaryTitle, 5));
-            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitXenophobicTitle, 5));
-        }
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitAntiEcologist, 10));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitAntiIndustrialist, 10));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitAntiMilitarist, 10));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitAntiPacifist, 10));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitAntiReligious, 10));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitAntiScientist, 10));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitMilitaristToIndustrialist , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitMilitaristToPacifist      , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitMilitaristToScientific    , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitMilitaristToEcologist     , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitMilitaristToReligious     , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitIndustrialistToMilitarist , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitIndustrialistToPacifist   , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitIndustrialistToScientific , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitIndustrialistToEcologist  , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitIndustrialistToReligious  , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitPacifistToMilitarist      , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitPacifistToIndustrialist   , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitPacifistToScientific      , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitPacifistToEcologist       , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitPacifistToReligious       , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitScientificToMilitarist    , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitScientificToIndustrialist , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitScientificToPacifist      , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitScientificToEcologist     , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitScientificToReligious     , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitEcologistToMilitarist     , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitEcologistToIndustrialist  , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitEcologistToPacifist       , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitEcologistToScientific     , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitEcologistToReligious      , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitReligiousToMilitarist     , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitReligiousToIndustrialist  , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitReligiousToPacifist       , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitReligiousToScientific     , 5));
+            _settingGroup.Add(new SecondaryPolitics(SecondaryPoliticsType.PopulationPoliticalTraitReligiousToEcologist,     5));
+
+}
         public SecondaryPolitics GetRandomSecondaryPolitics(List<int> iExclusionList, int iPointValueLessThan)
         {
             return (SecondaryPolitics)GetRandomSettingFromGroup(iExclusionList, iPointValueLessThan);

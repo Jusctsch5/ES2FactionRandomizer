@@ -17,7 +17,6 @@ namespace ES2FactionRandomizer.RandomFaction.RandomizerMethods
             ///
             // Handle Required Traits
             ///
-
             var faction = new CustomFaction();
             faction._gameplayAffinity = iDefinitions._gameplayAffinityGroup.GetRandomGameplayAffinity();
             if (iPreferences._matchAffinityType == Preferences.MatchAffinityType.MatchAffinity)
@@ -29,7 +28,14 @@ namespace ES2FactionRandomizer.RandomFaction.RandomizerMethods
                 faction._visualAffinity = iDefinitions._visualAffinityGroup.GetRandomVisualAffinity();
             }
             faction._government = iDefinitions._governmentGroup.GetRandomGovernment();
-            faction._homePlanet = iDefinitions._homePlanetGroup.GetRandomHomePlanet();
+            if (faction._gameplayAffinity._type != GameplayAffinityType.AffinityGameplayUmbralChoir)
+            {
+                faction._homePlanet = iDefinitions._homePlanetGroup.GetRandomHomePlanet();
+            }
+            else
+            {
+                faction._homePlanet = iDefinitions._homePlanetGroup._fakeHomePlanet;
+            }
 
             ///
             // Handle Population Traits.
@@ -96,7 +102,8 @@ namespace ES2FactionRandomizer.RandomFaction.RandomizerMethods
                 faction._tech.Add(tech2);
             }
 
-            if (iPreferences._guaranteeMinorPopulationType == Preferences.GuaranteeMinorPopulationType.GuaranteeMinorPopulation)
+            if ((iPreferences._guaranteeMinorPopulationType == Preferences.GuaranteeMinorPopulationType.GuaranteeMinorPopulation) &&
+                (faction._gameplayAffinity._canHaveMinorPop))
             {
                 faction._minorPopulation = iDefinitions._minorPopulationGroup.GetRandomMinorPopulation();
             }
@@ -108,29 +115,37 @@ namespace ES2FactionRandomizer.RandomFaction.RandomizerMethods
             // - A handful of minor buffs
             ///
 
+            
             remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
-            List<int> excludeTraits = new List<int>();
-            var trait = iDefinitions._factionTraitGroup.GetRandomFactionTraitMinPoints(excludeTraits, 25);
-            excludeTraits.Add(trait._id);
-            faction._factionTraits.Add(trait);
 
-            trait = iDefinitions._factionTraitGroup.GetRandomFactionTraitMinPoints(excludeTraits, 25);
+            List<int> excludeTraits = new List<int>(faction._gameplayAffinity._factionTraitExclusionList);
+            
+            var trait = iDefinitions._factionTraitGroup.GetRandomFactionTraitRange(excludeTraits, 25, remainingTraitScore);
             excludeTraits.Add(trait._id);
             faction._factionTraits.Add(trait);
+            remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
+
+            trait = iDefinitions._factionTraitGroup.GetRandomFactionTraitRange(excludeTraits, 25, remainingTraitScore);
+            excludeTraits.Add(trait._id);
+            faction._factionTraits.Add(trait);
+            remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
 
             trait = iDefinitions._factionTraitGroup.GetRandomFactionTraitRange(excludeTraits, -25, -10);
             excludeTraits.Add(trait._id);
             faction._factionTraits.Add(trait);
+            remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
 
-            trait = iDefinitions._factionTraitGroup.GetRandomFactionTraitRange(excludeTraits, 5, 10);
+            trait = iDefinitions._factionTraitGroup.GetRandomFactionTraitRange(excludeTraits, 5, remainingTraitScore);
             excludeTraits.Add(trait._id);
             faction._factionTraits.Add(trait);
+            remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
 
-            trait = iDefinitions._factionTraitGroup.GetRandomFactionTraitRange(excludeTraits, 5, 10);
+            trait = iDefinitions._factionTraitGroup.GetRandomFactionTraitRange(excludeTraits, -5, remainingTraitScore);
             excludeTraits.Add(trait._id);
             faction._factionTraits.Add(trait);
+            remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
 
-            trait = iDefinitions._factionTraitGroup.GetRandomFactionTraitRange(excludeTraits, 5, 10);
+            trait = iDefinitions._factionTraitGroup.GetRandomFactionTraitRange(excludeTraits, 5, remainingTraitScore);
             excludeTraits.Add(trait._id);
             faction._factionTraits.Add(trait);
 

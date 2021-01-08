@@ -8,20 +8,20 @@ namespace ES2FactionRandomizer.Definitions.Traits
 {
     public enum HomePlanetType
     {
-        FactionTraitHomePlanetPlanetTypeAridTitle        ,
-        FactionTraitHomePlanetPlanetTypeAtollTitle       ,
-        FactionTraitHomePlanetPlanetTypeBorealTitle      ,
-        FactionTraitHomePlanetPlanetTypeForestTitle      ,
-        FactionTraitHomePlanetPlanetTypeJungleTitle      ,
-        FactionTraitHomePlanetPlanetTypeMonsoonTitle     ,
-        FactionTraitHomePlanetPlanetTypeOceanTitle       ,
-        FactionTraitHomePlanetPlanetTypeSnowTitle        ,
-        FactionTraitHomePlanetPlanetTypeSteppesTitle     ,
-        FactionTraitHomePlanetPlanetTypeTerranTitle      ,
-        FactionTraitHomePlanetPlanetTypeTropicalTitle    ,
-        FactionTraitHomePlanetPlanetTypeTundraTitle      ,
-        FactionTraitHomePlanetPlanetTypeVeldtTitle       ,
-        // Cresent
+        FactionTraitHomePlanetPlanetTypeArid        ,
+        FactionTraitHomePlanetPlanetTypeAtoll       ,
+        FactionTraitHomePlanetPlanetTypeBoreal      ,
+        FactionTraitHomePlanetPlanetTypeForest      ,
+        FactionTraitHomePlanetPlanetTypeJungle      ,
+        FactionTraitHomePlanetPlanetTypeMonsoon     ,
+        FactionTraitHomePlanetPlanetTypeOcean       ,
+        FactionTraitHomePlanetPlanetTypeSnow        ,
+        FactionTraitHomePlanetPlanetTypeSteppes     ,
+        FactionTraitHomePlanetPlanetTypeTerran      ,
+        FactionTraitHomePlanetPlanetTypeTropical    ,
+        FactionTraitHomePlanetPlanetTypeTundra      ,
+        FactionTraitHomePlanetPlanetTypeVeldt       ,
+        FactionTraitHomePlanetPlanetTypeFake,
     }
 
     public class HomePlanet : FactionSetting
@@ -37,19 +37,20 @@ namespace ES2FactionRandomizer.Definitions.Traits
     {
         public void Initialize()
         {
-            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeAridTitle, 5));
-            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeAtollTitle, 15));
-            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeBorealTitle, 10));
-            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeForestTitle, 15));
-            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeJungleTitle, 10));
-            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeMonsoonTitle, 10));
-            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeOceanTitle, 15));
-            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeSnowTitle, 5));
-            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeSteppesTitle, 10));
-            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeTerranTitle, 15));
-            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeTropicalTitle, 10)); // Medd
-            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeTundraTitle, 10));
-            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeVeldtTitle, 10)); // savannah
+            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeArid, 5));
+            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeAtoll, 15));
+            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeBoreal, 10));
+            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeForest, 15));
+            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeJungle, 10));
+            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeMonsoon, 10));
+            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeOcean, 15));
+            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeSnow, 5));
+            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeSteppes, 10));
+            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeTerran, 15));
+            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeTropical, 10)); // Medd
+            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeTundra, 10));
+            _settingGroup.Add(new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeVeldt, 10)); // savannah
+            _fakeHomePlanet = new HomePlanet(HomePlanetType.FactionTraitHomePlanetPlanetTypeFake, 5);
         }
         public HomePlanet GetRandomHomePlanet(List<int> iExclusionList, int iPointValueLessThan)
         {
@@ -65,5 +66,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
         {
             return (HomePlanet)GetRandomSettingFromGroup();
         }
+
+        public HomePlanet _fakeHomePlanet { get; set; }
     }
 }

@@ -9,19 +9,19 @@ namespace ES2FactionRandomizer.Definitions.Traits
     public enum TertiaryPopulationModifierType
     {
         // Base Game
-        PopulationCollectionBonusTraitSophonTitle                              ,
-        PopulationCollectionBonusTraitCraverTitle                              ,
-        PopulationCollectionBonusTraitVenetianTitle                            ,
-        PopulationCollectionBonusTraitVampirilisTitle                          ,
-        PopulationCollectionBonusTraitSheredynTitle                            ,
-        PopulationCollectionBonusTraitTerransTitle                             ,
-        PopulationCollectionBonusTraitHoratioTitle                             ,
-        PopulationCollectionBonusTraitTimeLordsTitle                           ,
-        PopulationCollectionBonusTraitUnfallenTitle                            ,
-        PopulationCollectionBonusTraitCustomFactionScienceDefenseTitle         , // Vaulters (DLC1)
-        PopulationCollectionBonusTraitCustomFactionManpowerProductionCostTitle , // Hissho (DLC2)
-        PopulationCollectionBonusTraitUmbralChoirTitle                         , // Umbral Choir (DLC3)
-                                                                                 // Nakalim (DLC4)
+        PopulationCollectionBonusTraitNone,
+        PopulationCollectionBonusTraitCustomFactionScience                              ,
+        PopulationCollectionBonusTraitCustomFactionWar                              ,
+        PopulationCollectionBonusTraitCustomFactionDust                            ,
+        PopulationCollectionBonusTraitCustomFactionFIDSI                          ,
+        PopulationCollectionBonusTraitCustomFactionInfluence                            ,
+        PopulationCollectionBonusTraitCustomFactionFood,
+        PopulationCollectionBonusTraitCustomFactionIndustry,
+        PopulationCollectionBonusTraitCustomFactionPeace,
+        PopulationCollectionBonusTraitCustomFactionScienceDefense         , // Vaulters (DLC1)
+        PopulationCollectionBonusTraitCustomFactionManpowerProductionCost , // Hissho (DLC2)
+        PopulationCollectionBonusTraitCustomFactionHacking, // Umbral Choir (DLC3)
+                                                                            // Nakalim (DLC4)
     }
 
     public class TertiaryPopulationModifier : FactionSetting
@@ -37,18 +37,18 @@ namespace ES2FactionRandomizer.Definitions.Traits
     {
         public void Initialize()
         {
-            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitSophonTitle, 10));
-            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitCraverTitle, 10));
-            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitVenetianTitle, 10));
-            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitVampirilisTitle, 10));
-            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitSheredynTitle, 10));
-            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitTerransTitle, 10));
-            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitHoratioTitle, 10));
-            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitTimeLordsTitle, 10));
-            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitUnfallenTitle, 10));
-            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitCustomFactionScienceDefenseTitle, 10));
-            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitCustomFactionManpowerProductionCostTitle, 10));
-            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitUmbralChoirTitle, 10));
+            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitCustomFactionScience, 10));
+            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitCustomFactionWar, 10));
+            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitCustomFactionDust, 10));
+            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitCustomFactionFIDSI, 10));
+            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitCustomFactionInfluence, 10));
+            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitCustomFactionFood, 10));
+            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitCustomFactionIndustry, 10));
+            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitCustomFactionPeace, 10));
+            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitCustomFactionScienceDefense, 10));
+            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitCustomFactionManpowerProductionCost, 10));
+            _settingGroup.Add(new TertiaryPopulationModifier(TertiaryPopulationModifierType.PopulationCollectionBonusTraitCustomFactionHacking, 10));
+
         }
         public TertiaryPopulationModifier GetRandomTertiaryPopulationModifier(List<int> iExclusionList, int iPointValueLessThan)
         {
@@ -63,5 +63,6 @@ namespace ES2FactionRandomizer.Definitions.Traits
         {
             return (TertiaryPopulationModifier)GetRandomSettingFromGroup();
         }
+        
     }
 }

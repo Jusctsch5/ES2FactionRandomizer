@@ -8,34 +8,34 @@ namespace ES2FactionRandomizer.Definitions.Traits
 {
     public enum MinorPopulationType
     {
-        FactionTraitMinorAmoebaTitle,
-        FactionTraitMinorBenthysTitle,
-        FactionTraitMinorBhagabasTitle,
-        FactionTraitMinorBotsTitle,
-        FactionTraitMinorDamageTitle,
-        FactionTraitMinorDeuyivansTitle,
-        FactionTraitMinorDiplomacyTitle,
-        FactionTraitMinorEydersTitle,
-        FactionTraitMinorGalvransTitle,
-        FactionTraitMinorGreenmanTitle,
-        FactionTraitMinorGnashastsTitle,
-        FactionTraitMinorHarmonyTitle,
-        FactionTraitMinorHaroshemsTitle,
-        FactionTraitMinorHisshosTitle,
-        FactionTraitMinorMavrosTitle,
-        FactionTraitMinorNirisTitle,
-        FactionTraitMinorPilgrimsTitle,
-        FactionTraitMinorPulsosTitle,
-        FactionTraitMinorRemnantsTitle,
-        FactionTraitMinorTikanansTitle,
-        FactionTraitMinorZvaliTitle,
-        FactionTraitMinorKalTikMasTitle,        //  Updates
-        FactionTraitMinorSowersTitle,
-        FactionTraitMinorSefalorosTitle,
-        FactionTraitMinorSistersOfMercyTitle,   // Vaulters (DLC1)        
-        FactionTraitMinorIlloTitle,             // Hissho (DLC2)
-        FactionTraitMinorMinorHackingTitle,       // Umbral (DLC3)
-        // FactionTraitMinorOracularsTitle        // Nakalim (DLC4)
+        FactionTraitMinorAmoeba,
+        FactionTraitMinorBenthys,
+        FactionTraitMinorBhagabas,
+        FactionTraitMinorBots,
+        FactionTraitMinorDamage,
+        FactionTraitMinorDeuyivans,
+        FactionTraitMinorDiplomacy,
+        FactionTraitMinorEyders,
+        FactionTraitMinorGalvrans,
+        FactionTraitMinorGreenman,
+        FactionTraitMinorGnashasts,
+        FactionTraitMinorHarmony,
+        FactionTraitMinorHaroshems,
+        FactionTraitMinorHisshos,
+        FactionTraitMinorMavros,
+        FactionTraitMinorNiris,
+        FactionTraitMinorPilgrims,
+        FactionTraitMinorPulsos,
+        FactionTraitMinorRemnants,
+        FactionTraitMinorTikanans,
+        FactionTraitMinorZvali,
+        FactionTraitMinorKalTikMas,        //  Updates
+        FactionTraitMinorSowers,
+        FactionTraitMinorSefaloros,
+        FactionTraitMinorSistersOfMercy,   // Vaulters (DLC1)        
+        FactionTraitMinorIllo,             // Hissho (DLC2)
+        FactionTraitMinorMinorHacking,       // Umbral (DLC3)
+        // FactionTraitMinorOraculars        // Nakalim (DLC4)
     }
 
     public class MinorPopulation : FactionSetting
@@ -50,33 +50,33 @@ namespace ES2FactionRandomizer.Definitions.Traits
     {
         public void Initialize()
         {
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorAmoebaTitle, 5));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorBenthysTitle, 10)); // Kalgeros
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorBhagabasTitle, 5));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorBotsTitle, 10));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorDamageTitle, 10));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorDeuyivansTitle, 10));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorDiplomacyTitle, 10));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorEydersTitle, 10));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorGalvransTitle, 5));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorGreenmanTitle, 10)); // Amblyr
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorGnashastsTitle, 5));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorHarmonyTitle, 10));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorHaroshemsTitle, 10));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorHisshosTitle, 5)); // Yuusho
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorMavrosTitle, 10));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorNirisTitle, 10));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorPilgrimsTitle, 5));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorPulsosTitle, 5));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorRemnantsTitle, 5));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorTikanansTitle, 5));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorZvaliTitle, 10));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorKalTikMasTitle, 5));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorSowersTitle, 5));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorSefalorosTitle, 5));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorSistersOfMercyTitle, 5));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorIlloTitle, 5));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorMinorHackingTitle, 5)); // Kalmat
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorAmoeba, 5));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorBenthys, 10)); // Kalgeros
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorBhagabas, 5));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorBots, 10));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorDamage, 10));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorDeuyivans, 10));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorDiplomacy, 10));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorEyders, 10));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorGalvrans, 5));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorGreenman, 10)); // Amblyr
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorGnashasts, 5));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorHarmony, 10));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorHaroshems, 10));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorHisshos, 5)); // Yuusho
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorMavros, 10));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorNiris, 10));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorPilgrims, 5));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorPulsos, 5));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorRemnants, 5));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorTikanans, 5));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorZvali, 10));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorKalTikMas, 5));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorSowers, 5));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorSefaloros, 5));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorSistersOfMercy, 5));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorIllo, 5));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorMinorHacking, 5)); // Kalmat
         }
         public MinorPopulation GetRandomMinorPopulation(List<int> iExclusionList, int iPointValueLessThan)
         {

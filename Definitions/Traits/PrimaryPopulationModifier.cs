@@ -8,35 +8,26 @@ namespace ES2FactionRandomizer.Definitions.Traits
 {
     public enum PrimaryPopulationModifierTraitType
     {
-        PopulationModifiersTraitAmoebaPrimaryTitle                   ,   // Base Game
-        PopulationModifiersTraitBotsPrimaryTitle                     ,
-        PopulationModifiersTraitCraversPrimaryTitle                  ,
-        PopulationModifiersTraitDeuyivansPrimaryTitle                ,
-        PopulationModifiersTraitGnashastsPrimaryTitle                ,
-        PopulationModifiersTraitHaroshemsPrimaryTitle                ,
-        PopulationModifiersTraitHoratioPrimaryTitle                  ,
-        PopulationModifiersTraitMavrosPrimaryTitle                   ,
-        PopulationModifiersTraitMezariPrimaryTitle                   ,
-        PopulationModifiersTraitNirisPrimaryTitle                    ,
-        PopulationModifiersTraitPilgrimsPrimaryTitle                 ,
-        PopulationModifiersTraitPrimaryFIDSITitle                    ,
-        PopulationModifiersTraitPulsosPrimaryTitle                   ,     
-        PopulationModifiersTraitRemnantPrimaryTitle                  ,
-        PopulationModifiersTraitSheredynPrimaryTitle                 ,
-        PopulationModifiersTraitSophonsPrimaryTitle                  ,
-        PopulationModifiersTraitTerransPrimaryTitle                  ,
-        PopulationModifiersTraitTikanansPrimaryTitle                 ,
-        PopulationModifiersTraitTimeLordsPrimaryTitle                ,
-        PopulationModifiersTraitUnfallenPrimaryTitle                 ,
-        PopulationModifiersTraitVampirilisPrimaryTitle               ,
-        PopulationModifiersTraitVenetiansPrimaryTitle                ,
-        PopulationModifiersTraitZvaliPrimaryTitle                    ,
-        PopulationModifiersTraitSuperGuardiansPrimaryTitle           ,
-        PopulationModifiersTraitPrimaryStrategicToFood01Title        ,
-        PopulationModifiersTraitHisshoPrimaryTitle                   ,   // Hissho (DLC2)
-        PopulationModifiersTraitIlloPrimaryTitle                     ,                 
-        PopulationModifiersTraitPrimaryProcessingPower01Title        ,   // Umbral Choir (DLC3)
-        // PopulationModifiersTraitPrimaryHappinessTempleTitle       ,   // Nakalim (DLC4)
+        PopulationModifiersTraitPrimaryNone,
+        PopulationModifiersTraitPrimaryScience01,   // Base Game
+        PopulationModifiersTraitPrimaryDepletionFIDS,
+        PopulationModifiersTraitPrimaryDust,
+        PopulationModifiersTraitPrimarySlowGrowthFIDS,
+        PopulationModifiersTraitPrimaryInfluence,
+        PopulationModifiersTraitPrimaryDefense,
+        PopulationModifiersTraitPrimaryHappiness,
+        PopulationModifiersTraitPrimaryIDS,
+        PopulationModifiersTraitPrimaryFIDSI,
+        PopulationModifiersTraitPrimaryFood03,
+        PopulationModifiersTraitPrimaryFood01,
+        PopulationModifiersTraitPrimaryIndustry,
+        PopulationModifiersTraitPrimaryScience02,
+        PopulationModifiersTraitPrimaryFood02,
+        PopulationModifiersTraitPrimaryManpower,
+        PopulationModifiersTraitPrimaryGroundBattleAttackerDamage,
+        PopulationModifiersTraitPrimaryProcessingPower01,
+        PopulationModifiersTraitPrimaryStrategicToFood01,   
+        // PopulationModifiersTraitPrimaryHappinessTemple       ,   // Nakalim (DLC4)
     }
 
     public class PrimaryPopulationModifier : FactionSetting
@@ -51,27 +42,24 @@ namespace ES2FactionRandomizer.Definitions.Traits
     {
         public void Initialize()
         {
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitAmoebaPrimaryTitle, 10)); // Nuturers
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitBotsPrimaryTitle, 5)); // Craftsmen
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitCraversPrimaryTitle, 15)); // Extreme Foremen
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitDeuyivansPrimaryTitle, 10)); // Methodists
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitGnashastsPrimaryTitle, 5)); // Tough Defenders
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitHaroshemsPrimaryTitle, 5)); // Agricultural Engineers
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitHoratioPrimaryTitle, 5)); // Hedonists
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitMezariPrimaryTitle, 5)); // Analysts
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryFIDSITitle, 15)); // Meritocratic Cosmopolites
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitSheredynPrimaryTitle, 10)); // Martial Traditions
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitSophonsPrimaryTitle, 5)); // Analysts
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitTerransPrimaryTitle, 5)); // Loyal Citizens
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitTikanansPrimaryTitle, 10)); // Eager Volunteers
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitTimeLordsPrimaryTitle, 25)); // Adept Workers
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitUnfallenPrimaryTitle, 15)); // Agriculturalists
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitVampirilisPrimaryTitle, 10)); // Gargantuan Population
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitVenetiansPrimaryTitle, 5)); // Bankers
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryStrategicToFood01Title, 5)); // Strategic Sustenance
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitHisshoPrimaryTitle, 5)); // Martial Traditions
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitIlloPrimaryTitle, 5)); // Stellar Stoics
-            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryProcessingPower01Title, 5)); // Natural Born Hackers
+            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryScience01, 5));
+            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryDepletionFIDS, 15));
+            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryDust, 5));
+            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimarySlowGrowthFIDS, 15));
+            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryInfluence, 5));
+            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryDefense, 5));
+            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryHappiness, 5));
+            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryIDS, 15));
+            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryFIDSI, 15));
+            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryFood03, 15));
+            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryFood01, 5));
+            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryIndustry, 5));
+            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryScience02, 10));
+            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryFood02, 10));
+            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryManpower, 10));
+            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryGroundBattleAttackerDamage, 5));
+            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryProcessingPower01, 5)); 
+            _settingGroup.Add(new PrimaryPopulationModifier(PrimaryPopulationModifierTraitType.PopulationModifiersTraitPrimaryStrategicToFood01, 5));
         }
         public PrimaryPopulationModifier GetRandomPrimaryPopulationModifier(List<int> iExclusionList, int iPointValueLessThan)
         {

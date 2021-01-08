@@ -13,11 +13,13 @@ namespace ES2FactionRandomizer
             _id = iId;
             _jsonString = iJsonString;
             _scoreModifier = iScoreModifier;
+            _exclusiveSet = new List<int>();
         }
 
         public string _jsonString { get; set; }
         public int _scoreModifier { get; set; }
         public int _id { get; set; }
+        public List<int> _exclusiveSet { get; set; }
 
     }
     public class FactionSettingGroup
@@ -40,9 +42,10 @@ namespace ES2FactionRandomizer
                 {
                     continue;
                 }
+                filteredSettingsGroup.Add(setting);
             }
-            int r = _rand.Next(_settingGroup.Count());
-            return _settingGroup[r];
+            int r = _rand.Next(filteredSettingsGroup.Count());
+            return filteredSettingsGroup[r];
         }
 
         public FactionSetting GetRandomSettingFromGroup(int iPointValueLessThan)
@@ -56,11 +59,11 @@ namespace ES2FactionRandomizer
             var exclusionListEmpty = new List<int>();
             return GetRandomSettingFromGroup(exclusionListEmpty, 0);
         }
+
         public FactionSetting GetSettingFromGroup(int iValue)
         {
             return _settingGroup.Find(x => x._id == iValue);
         }
-
 
         public FactionSetting GetRandomSettingMinPoints(List<int> iExclusionList, int iMinPoints)
         {
@@ -75,9 +78,10 @@ namespace ES2FactionRandomizer
                 {
                     continue;
                 }
+                filteredSettingsGroup.Add(setting);
             }
-            int r = _rand.Next(_settingGroup.Count());
-            return _settingGroup[r];
+            int r = _rand.Next(filteredSettingsGroup.Count());
+            return filteredSettingsGroup[r];
         }
 
         public FactionSetting GetRandomSettingRange(List<int> iExclusionList, int iMinPoints, int iMaxPoints)
@@ -89,61 +93,39 @@ namespace ES2FactionRandomizer
                 {
                     continue;
                 }
-                if (iMinPoints != 0 && setting._scoreModifier < iMinPoints && setting._scoreModifier > iMaxPoints)
+                if (setting._scoreModifier < iMinPoints || setting._scoreModifier > iMaxPoints)
                 {
                     continue;
                 }
+                filteredSettingsGroup.Add(setting);
             }
-            int r = _rand.Next(_settingGroup.Count());
-            return _settingGroup[r];
+            int r = _rand.Next(filteredSettingsGroup.Count());
+            Console.WriteLine("Got Trait:" + filteredSettingsGroup[r]._jsonString + 
+                              " score:" + filteredSettingsGroup[r]._scoreModifier + 
+                              " from minPoints:" + iMinPoints + 
+                              " maxPoints:" + iMaxPoints);
+            return filteredSettingsGroup[r];
+        }
+
+        public void AddExclusivity(List<int> iExclusionList)
+        {
+            foreach (var factionSetting in _settingGroup)
+            {
+
+                // If there's a match, add exclusive list to the setting. 
+                foreach (var exclusiveValue in iExclusionList)
+                {
+                    if (factionSetting._id == exclusiveValue)
+                    {
+                        factionSetting._exclusiveSet.Clear();
+                        factionSetting._exclusiveSet = new List<int>(iExclusionList);
+                        break;
+                    }
+                }
+            }
         }
 
         public List<FactionSetting> _settingGroup;
         Random _rand;
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-    /*
-    <?xml version = "1.0" encoding="utf-8"?>
-<MajorFaction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="786264be-f052-4efb-80c3-b74276052964" Author="Frogulous" Standard="false" Priority="0">
-  <Affinity Name = "AffinityGameplayCravers" />
-  < Trait Name="IsMajorFaction" />
-  <Trait Name = "FactionTraitFearlessWarriors1" />
-  < Trait Name="FactionTraitTechnologyDefinitionEconomyAndTrade1" />
-  <Trait Name = "FactionTraitTechnologyDefinitionMilitary1" />
-  < Trait Name="FactionTraitCrowdedPlanets1" />
-  <Trait Name = "FactionTraitMinorNiris" />
-  < Trait Name="FactionTraitBigFleets1" />
-  <Trait Name = "FactionTraitIneptTraders" />
-  < Trait Name="FactionTraitHomePlanetPlanetTypeTerran" />
-  <Trait Name = "TraitCustomFaction" />
-  < TraitStartingSenate Name="" SubCategory="" Priority="100">
-    <Prerequisites />
-    <UnlockedAbstractShipDesigns />
-    <Government Name = "GovernmentDemocracy" />
-    < PoliticsWeight Politics="Politics01" Weight="0" />
-    <PoliticsWeight Politics = "Politics02" Weight="0" />
-    <PoliticsWeight Politics = "Politics03" Weight="1" />
-    <PoliticsWeight Politics = "Politics04" Weight="0" />
-    <PoliticsWeight Politics = "Politics05" Weight="0" />
-    <PoliticsWeight Politics = "Politics06" Weight="2" />
-    <Cost>10</Cost>
-  </TraitStartingSenate>
-  <Bailiff Name = "DefaultMoneyBailiff" />
-  < Bailiff Name="DefaultEmpirePointBailiff" />
-  <MajorPopulation Affinity = "8e684513-e6a3-4c19-bdad-3bd349a54e51" Count="2" />
-  <LocalizedDescription />
-  <LocalizedName>Sophisticated Cravers</LocalizedName>
-</MajorFaction>
-        */
