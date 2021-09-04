@@ -3,6 +3,7 @@ using ES2FactionRandomizer.Definitions.Traits;
 using ES2FactionRandomizer.RandomFaction;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -103,9 +104,19 @@ namespace ES2FactionRandomizer
             return traits;
         }
 
+        public int GetPopulationScoreLimit()
+        {
+            return 60;
+        }
+
         public int GetTraitScoreLimit()
         {
             return _gameplayAffinity._scoreModifier;
+        }
+
+        public int GetTraitLimit()
+        {
+            return 8;
         }
 
         public string FactionToString()
@@ -140,8 +151,6 @@ namespace ES2FactionRandomizer
             return factionStr;
         }
 
-
-
         public GameplayAffinity _gameplayAffinity { get; set; }
         public VisualAffinity   _visualAffinity { get; set; }
         public List<FactionTrait> _factionTraits { get; set; }
@@ -161,16 +170,43 @@ namespace ES2FactionRandomizer
 
         public void Initialize()
         {
-            _factionName = FactionNames.GetRandomAdjective(_gameplayAffinity._type) + FactionNames.GetRandomNoun(_visualAffinity._type);
+            _factionName = FactionNames.GetRandomAdjective(_gameplayAffinity._type) + " " + FactionNames.GetRandomNoun(_visualAffinity._type);
             _gameplayAffinityUuidStr = Guid.NewGuid().ToString();
             _visualAffinityUuidStr = Guid.NewGuid().ToString();
+        }
+
+        public string RemoveMatchingLine(string iInputString, string iMatch)
+        {
+            string newString = string.Empty;
+            using (StringReader reader = new StringReader(iInputString))
+            {
+                string line = string.Empty;
+                while (true)
+                {
+                    line = reader.ReadLine();
+                    if (line == null)
+                    {
+                        break;
+                    }
+   
+                    if (line.Contains(iMatch))
+                    { 
+                        // pass
+                    }
+                    else
+                    {
+                        newString += "\n" + line;
+                    }
+                } 
+            }
+
+            return newString;
         }
         
         public string CreatePopulationXmlString()
         {
-            string populationStr = @"
-<?xml version=""1.0"" encoding=""utf-8""?>
-<PopulationDefinition xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" AffinityName=""$VISUALAFFINITYUUID"" LocalizedName=""Custom Hissho"" UniquePopulationId=""0"">
+            string populationStr = @"<?xml version=""1.0"" encoding=""utf-8""?>
+<PopulationDefinition xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" AffinityName=""$VISUALAFFINITYUUID"" LocalizedName=""$FACTIONNAME"" UniquePopulationId=""2"">
   <DefaultPolitics>
     <Politics BaseScore=""1"" BaseTrend=""0"" PoliticsReference=""$POLITICS"" />
   </DefaultPolitics>
@@ -193,24 +229,72 @@ namespace ES2FactionRandomizer
     <Luxury>Luxury8</Luxury>
   </GrowthBoostLuxuryOptions>
 </PopulationDefinition>";
-
+            populationStr = populationStr.Replace("$FACTIONNAME", _factionName);
             populationStr = populationStr.Replace("$POLITICS", _primaryPolitics.GetPoliticsReference());
             populationStr = populationStr.Replace("$VISUALAFFINITYUUID", _visualAffinityUuidStr);
             populationStr = populationStr.Replace("$VISUALAFFINITY", _visualAffinity._jsonString);
             populationStr = populationStr.Replace("$POLPRIM", _primaryPolitics._jsonString);
-            populationStr = populationStr.Replace("$POLSEC1", _secondaryPolitics1._jsonString);
-            populationStr = populationStr.Replace("$POLSEC2", _secondaryPolitics2._jsonString);
-            populationStr = populationStr.Replace("$POPMOD", _visualAffinity.GetPopulationModifierTrait());
-            populationStr = populationStr.Replace("$POPPRIM", _primaryPopulationModifier._jsonString);
-            populationStr = populationStr.Replace("$POPSEC", _secondaryPopulationModifier._jsonString);
-            populationStr = populationStr.Replace("$POPTRI", _tertiaryPopulationModifier._jsonString);
+
+            if (_secondaryPolitics1 == null)
+            {
+                populationStr = RemoveMatchingLine(populationStr, "$POLSEC1");
+            }
+            else
+            {
+                populationStr = populationStr.Replace("$POLSEC1", _secondaryPolitics1._jsonString);
+            }
+
+            if (_secondaryPolitics2 == null)
+            {
+                populationStr = RemoveMatchingLine(populationStr, "$POLSEC2");
+            }
+            else
+            {
+                populationStr = populationStr.Replace("$POLSEC2", _secondaryPolitics2._jsonString);
+            }
+
+            if (_visualAffinity == null)
+            {
+                populationStr = RemoveMatchingLine(populationStr, "$POPMOD");
+            }
+            else
+            {
+                populationStr = populationStr.Replace("$POPMOD", _visualAffinity.GetPopulationModifierTrait());
+            }
+
+            if (_primaryPopulationModifier == null)
+            {
+                populationStr = RemoveMatchingLine(populationStr, "$POPPRIM");
+            }
+            else
+            {
+                populationStr = populationStr.Replace("$POPPRIM", _primaryPopulationModifier._jsonString);
+            }
+
+            if (_secondaryPopulationModifier == null)
+            {
+                populationStr = RemoveMatchingLine(populationStr, "$POPSEC");
+            }
+            else
+            {
+                populationStr = populationStr.Replace("$POPSEC", _secondaryPopulationModifier._jsonString);
+            }
+
+            if (_tertiaryPopulationModifier == null)
+            {
+                populationStr = RemoveMatchingLine(populationStr, "$POPTRI");
+            }
+            else
+            {
+                populationStr = populationStr.Replace("$POPTRI", _tertiaryPopulationModifier._jsonString);
+            }
+
             return populationStr;
         }
 
         public string CreateFactionXmlString()
         {
-            string factionStr = @"
-<?xml version=""1.0"" encoding=""utf - 8""?>
+            string factionStr = @"<?xml version=""1.0"" encoding=""utf-8""?>
 <MajorFaction xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" Name=""$UUID"" Author=""Random"" Standard=""false"" Priority=""0"">
   <Affinity Name=""$GAMEPLAYAFFINITY"" />
   <Trait Name=""IsMajorFaction"" />
@@ -293,7 +377,7 @@ $POLITICSWEIGHT
 
                     break;
                 case PrimaryPoliticsType.PopulationPoliticalTraitPacifist:
-                    politicsWeightString = @"    <PoliticsWeight Politics=""Politics01"" Weight=""0"" /> 
+                    politicsWeightString = @"    <PoliticsWeight Politics=""Politics01"" Weight=""0"" />
     <PoliticsWeight Politics=""Politics02"" Weight=""0"" />
     <PoliticsWeight Politics=""Politics03"" Weight=""2"" />
     <PoliticsWeight Politics=""Politics04"" Weight=""0"" />

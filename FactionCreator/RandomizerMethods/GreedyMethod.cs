@@ -51,31 +51,38 @@ namespace ES2FactionRandomizer.RandomFaction.RandomizerMethods
             // Need to make sure recorded as "None".
             ///
 
-            var populationTraits = new List<int> { 1, 2, 3, 4, 5 };
-            RandomUtil.Shuffle(populationTraits); // hack to make sure we don't consistently blow our points on the first catagories
+            var populationTraits = new List<int> { 1, 2, 3};
+            RandomUtil.Shuffle(populationTraits); // hack to make sure we don't consistently blow our points on the first categories
             foreach (int popTrait in populationTraits)
             {
                 int desiredPopTraitPoints = iPreferences._desiredPopScore;
                 int remainingPopTraitPoints = desiredPopTraitPoints - faction.CalculatePopulationScore();
+                Console.WriteLine("\tremainingPopTraitScore:" + remainingPopTraitPoints);
+
                 var secondaryPoliticsChosen = new List<int>();
                 switch (popTrait)
                 {
                     case 1:
                         faction._secondaryPolitics1 = iDefinitions._secondaryPoliticsGroup.GetRandomSecondaryPolitics(secondaryPoliticsChosen, remainingPopTraitPoints);
                         secondaryPoliticsChosen.Add(faction._secondaryPolitics1._id);
+                        Console.WriteLine("\tremainingPopTraitScore:" + remainingPopTraitPoints);
                         break;
                     case 2:
                         faction._secondaryPolitics2 = iDefinitions._secondaryPoliticsGroup.GetRandomSecondaryPolitics(secondaryPoliticsChosen, remainingPopTraitPoints);
                         secondaryPoliticsChosen.Add(faction._secondaryPolitics2._id);
+                        Console.WriteLine("\tremainingPopTraitScore:" + remainingPopTraitPoints);
                         break;
                     case 3:
                         faction._primaryPopulationModifier = iDefinitions._primaryPopulationModifierGroup.GetRandomPrimaryPopulationModifier(remainingPopTraitPoints);
+                        Console.WriteLine("\tremainingPopTraitScore:" + remainingPopTraitPoints);
                         break;
                     case 4:
                         faction._secondaryPopulationModifier = iDefinitions._secondaryPopulationModifierGroup.GetRandomSecondaryPopulationModifier(remainingPopTraitPoints);
+                        Console.WriteLine("\tremainingPopTraitScore:" + remainingPopTraitPoints);
                         break;
                     case 5:
                         faction._tertiaryPopulationModifier = iDefinitions._tertiaryPopulationModifierGroup.GetRandomTertiaryPopulationModifier(remainingPopTraitPoints);
+                        Console.WriteLine("\tremainingPopTraitScore:" + remainingPopTraitPoints);
                         break;
                     default:
                         break;
@@ -87,6 +94,8 @@ namespace ES2FactionRandomizer.RandomFaction.RandomizerMethods
             ///
 
             int desiredTraitScore = iPreferences._desiredTraitScore;
+            desiredTraitScore = Math.Min(iPreferences._desiredTraitScore, faction._gameplayAffinity._scoreModifier);
+
             int remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
 
             if (iPreferences._guaranteeTechType == Preferences.GuaranteeTechType.Guarantee1Tech)
@@ -112,42 +121,67 @@ namespace ES2FactionRandomizer.RandomFaction.RandomizerMethods
             // Handle faction traits
             // - Want a couple skills to define the faction (25-40 points)
             // - A couple downsides
-            // - A handful of minor buffs
+            // - A handful of minor buffs to bring us close to the max
+            //
+            // If we fail to obtain a trait based on exclusions (i.e. points and prior traits), then move to the next decision.
             ///
-
             
             remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
 
             List<int> excludeTraits = new List<int>(faction._gameplayAffinity._factionTraitExclusionList);
             
             var trait = iDefinitions._factionTraitGroup.GetRandomFactionTraitRange(excludeTraits, 25, remainingTraitScore);
-            excludeTraits.Add(trait._id);
-            faction._factionTraits.Add(trait);
-            remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
+            if (trait != null) { 
+                excludeTraits.Add(trait._id);
+                faction._factionTraits.Add(trait);
+                remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
+                Console.WriteLine("\tremainingTraitScore:" + remainingTraitScore);
+            }
 
             trait = iDefinitions._factionTraitGroup.GetRandomFactionTraitRange(excludeTraits, 25, remainingTraitScore);
-            excludeTraits.Add(trait._id);
-            faction._factionTraits.Add(trait);
-            remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
+            if (trait != null)
+            {
+                excludeTraits.Add(trait._id);
+                faction._factionTraits.Add(trait);
+                remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
+                Console.WriteLine("\tremainingTraitScore:" + remainingTraitScore);
+            }
 
             trait = iDefinitions._factionTraitGroup.GetRandomFactionTraitRange(excludeTraits, -25, -10);
-            excludeTraits.Add(trait._id);
-            faction._factionTraits.Add(trait);
-            remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
+            if (trait != null)
+            {
+                excludeTraits.Add(trait._id);
+                faction._factionTraits.Add(trait);
+                remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
+                Console.WriteLine("\tremainingTraitScore:" + remainingTraitScore);
+            }
 
             trait = iDefinitions._factionTraitGroup.GetRandomFactionTraitRange(excludeTraits, 5, remainingTraitScore);
-            excludeTraits.Add(trait._id);
-            faction._factionTraits.Add(trait);
-            remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
+            if (trait != null)
+            {
+                excludeTraits.Add(trait._id);
+                faction._factionTraits.Add(trait);
+                remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
+                Console.WriteLine("\tremainingTraitScore:" + remainingTraitScore);
+            }
 
             trait = iDefinitions._factionTraitGroup.GetRandomFactionTraitRange(excludeTraits, -5, remainingTraitScore);
-            excludeTraits.Add(trait._id);
-            faction._factionTraits.Add(trait);
-            remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
+            if (trait != null)
+            {
+                excludeTraits.Add(trait._id);
+                faction._factionTraits.Add(trait);
+                remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
+                Console.WriteLine("\tremainingTraitScore:" + remainingTraitScore);
+            }
 
             trait = iDefinitions._factionTraitGroup.GetRandomFactionTraitRange(excludeTraits, 5, remainingTraitScore);
-            excludeTraits.Add(trait._id);
-            faction._factionTraits.Add(trait);
+            if (trait != null)
+            {
+                excludeTraits.Add(trait._id);
+                faction._factionTraits.Add(trait);
+                remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
+                Console.WriteLine("\tremainingTraitScore:" + remainingTraitScore);
+            }
 
             return faction;
         }

@@ -96,7 +96,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
                 (int)FactionTraitType.FactionTraitNaive2,
                 (int)FactionTraitType.FactionTraitOptimistic1,
                 (int)FactionTraitType.FactionTraitOptimistic2,
-                (int)FactionTraitType.FactionTraitFactionTraitSmoothTalkers,
+                (int)FactionTraitType.FactionTraitSmoothTalkers,
                 (int)FactionTraitType.FactionTraitAntiExpansionists,
                 (int)FactionTraitType.FactionTraitUtopianInfrastructure,
                 (int)FactionTraitType.FactionTraitPessimistic1,

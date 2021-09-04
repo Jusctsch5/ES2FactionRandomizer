@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,7 +45,14 @@ namespace ES2FactionRandomizer
                 }
                 filteredSettingsGroup.Add(setting);
             }
+            if (filteredSettingsGroup.Count() == 0)
+            {
+                return null;
+            }
             int r = _rand.Next(filteredSettingsGroup.Count());
+            Console.WriteLine("Got Trait:" + filteredSettingsGroup[r]._jsonString +
+                  " score:" + filteredSettingsGroup[r]._scoreModifier +
+                  " from iPointValueLessThan:" + iPointValueLessThan);
             return filteredSettingsGroup[r];
         }
 
@@ -56,7 +64,8 @@ namespace ES2FactionRandomizer
 
         public FactionSetting GetRandomSettingFromGroup()
         {
-            var exclusionListEmpty = new List<int>();
+            var exclusionListEmpty = new List<int>();///////////////////////////////////////////////////'''''''''''''''''''''''''''''''''''
+            ////////////////;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
             return GetRandomSettingFromGroup(exclusionListEmpty, 0);
         }
 
@@ -99,7 +108,18 @@ namespace ES2FactionRandomizer
                 }
                 filteredSettingsGroup.Add(setting);
             }
-            int r = _rand.Next(filteredSettingsGroup.Count());
+
+            if (filteredSettingsGroup.Count() == 0) {
+                Console.WriteLine("No settings exist to satisfy exclusion list");
+                return null;
+            }
+
+            int r = _rand.Next(filteredSettingsGroup.Count());          
+            if (r >= filteredSettingsGroup.Count)
+            {
+                Console.WriteLine("Setting:" + r + " is outside bounds with length:" + filteredSettingsGroup.Count());
+                Debug.Assert(false);
+            }
             Console.WriteLine("Got Trait:" + filteredSettingsGroup[r]._jsonString + 
                               " score:" + filteredSettingsGroup[r]._scoreModifier + 
                               " from minPoints:" + iMinPoints + 

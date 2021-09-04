@@ -54,7 +54,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
         FactionTraitExpansionists1,
         FactionTraitExpansionists2,
         FactionTraitExtendedConsortium,
-        FactionTraitFactionTraitSmoothTalkers,
+        FactionTraitSmoothTalkers,
         FactionTraitUtopianInfrastructure,
         FactionTraitFastTraveler1,
         FactionTraitFastTraveler2,
@@ -213,7 +213,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
             _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitExpansionists1, 10));
             _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitExpansionists2, 25));
             _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitExtendedConsortium, 15));
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFactionTraitSmoothTalkers, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitSmoothTalkers, 10));
             _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitUtopianInfrastructure, 10));
             _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFastTraveler1, 10));
             _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFastTraveler2, 25));
