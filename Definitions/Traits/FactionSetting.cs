@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ES2FactionRandomizer.Utility;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -28,7 +29,7 @@ namespace ES2FactionRandomizer
         public FactionSettingGroup()
         {
             _settingGroup = new List<FactionSetting>();
-            _rand = new Random();
+            _rand = RandomUtil.GetRandom();
         }
 
         public FactionSetting GetRandomSettingFromGroup(List<int> iExclusionList, int iPointValueLessThan)
@@ -64,8 +65,7 @@ namespace ES2FactionRandomizer
 
         public FactionSetting GetRandomSettingFromGroup()
         {
-            var exclusionListEmpty = new List<int>();///////////////////////////////////////////////////'''''''''''''''''''''''''''''''''''
-            ////////////////;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+            var exclusionListEmpty = new List<int>();
             return GetRandomSettingFromGroup(exclusionListEmpty, 0);
         }
 
@@ -131,7 +131,6 @@ namespace ES2FactionRandomizer
         {
             foreach (var factionSetting in _settingGroup)
             {
-
                 // If there's a match, add exclusive list to the setting. 
                 foreach (var exclusiveValue in iExclusionList)
                 {

@@ -15,7 +15,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
         AffinityGameplayTerrans        ,
         AffinityGameplayHoratio        ,
         AffinityGameplayTimeLords      ,
-        AffinityGameplayUnfallen      ,
+        AffinityGameplayUnfallen       ,
         AffinityGameplayVaulters       ,
         AffinityGameplayMajorHisshos   ,
         AffinityGameplayUmbralChoir
@@ -26,7 +26,6 @@ namespace ES2FactionRandomizer.Definitions.Traits
         public GameplayAffinity(GameplayAffinityType iType, int iScoreModifier) : base((int)iType, iType.ToString(), iScoreModifier)
         {
             _type = iType;
-            _factionTraitExclusionList = new List<int>();
 
             if (iType == GameplayAffinityType.AffinityGameplayVampirilis || iType == GameplayAffinityType.AffinityGameplayUmbralChoir)
             {
@@ -36,11 +35,9 @@ namespace ES2FactionRandomizer.Definitions.Traits
             {
                 _canHaveMinorPop = true;
             }
-
         }
 
         public GameplayAffinityType _type { get; set; }
-        public List<int> _factionTraitExclusionList;
         public bool _canHaveMinorPop { get; set; }
     }
     public class GameplayAffinityGroup : FactionSettingGroup
@@ -67,12 +64,12 @@ namespace ES2FactionRandomizer.Definitions.Traits
                 (int)FactionTraitType.FactionTraitCrowdedPlanets1,
                 (int)FactionTraitType.FactionTraitCrowdedPlanets2,
                 (int)FactionTraitType.FactionTraitGuardians,
-                (int)FactionTraitType.FactionTraitFactionTraitManualHomeSystem,
+                //(int)FactionTraitType.FactionTraitFactionTraitManualHomeSystem,
             };
 
             affinityGameplayVenetians._exclusiveSet = new List<int>
             {
-                (int)FactionTraitType.FactionTraitFactionTraitManualHomeSystem,
+                //(int)FactionTraitType.FactionTraitFactionTraitManualHomeSystem,
             };
 
             affinityGameplayUnfallen._exclusiveSet = new List<int>
@@ -80,7 +77,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
                 (int)FactionTraitType.FactionTraitApatheticColonists,
                 (int)FactionTraitType.FactionTraitFerventColonists1,
                 (int)FactionTraitType.FactionTraitFerventColonists2,
-                (int)FactionTraitType.FactionTraitFactionTraitManualHomeSystem
+                //(int)FactionTraitType.FactionTraitFactionTraitManualHomeSystem
             };
 
             affinityGameplayMajorHisshos._exclusiveSet = new List<int> 
@@ -111,7 +108,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
                 (int)FactionTraitType.FactionTraitFerventColonists1,
                 (int)FactionTraitType.FactionTraitFerventColonists2,
                 (int)FactionTraitType.FactionTraitGuardians,
-                (int)FactionTraitType.FactionTraitFactionTraitManualHomeSystem,
+                //(int)FactionTraitType.FactionTraitFactionTraitManualHomeSystem,
                 (int)FactionTraitType.FactionTraitNativeObliteratorProtection,
                 (int)FactionTraitType.FactionTraitStartWithNegativeAnomaly,
                 (int)FactionTraitType.FactionTraitStartWithPositiveAnomaly

@@ -124,7 +124,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
         FactionTraitStartWithTitanium,
         FactionTraitCorsairs,
         FactionTraitCoreWorlds,
-        FactionTraitFactionTraitManualHomeSystem,
+        FactionTraitManualHomeSystem,
         FactionTraitSubOptimalDefense,
         FactionTraitTemperateColonization,
         FactionTraitUniqueDictatorship,
@@ -274,7 +274,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
             _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCorsairs, 5));
             _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitCoreWorlds, 10)); // Core Worlds
             
-            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitFactionTraitManualHomeSystem, 10));
+            _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitManualHomeSystem, 10)); // TODO: Remove? - might not exist.
 
             _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitSubOptimalDefense, -5)); // opp. optimal defense
             _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitUnskilledBuilders1, -5)); // opp.  constructionists
@@ -298,22 +298,22 @@ namespace ES2FactionRandomizer.Definitions.Traits
             _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitLuxuryCostModifier, -10)); // Expensive Tastes
             _settingGroup.Add(new FactionTrait(FactionTraitType.FactionTraitAntiExpansionists, -20)); // Stay-at-Home
 
-            //_factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitDiligentWorkers                 ,   10));
+            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitDiligentWorkers                 ,   10));
             // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitFierceVigilantes                ,   10));
             // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitFrailVigilantes                 ,   10));
             // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitUniqueDictatorship              ,   10)); // Absolute totalitatianisms
 
-            //_factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitBeamSpecialization              ,   10)); // Beam weapons???
+            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitBeamSpecialization              ,   10)); // Beam weapons???
             // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitKineticSpecialization           ,   10)); //  Kinetic weapons
             // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitLaserSpecialization             ,   10));
             // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitMissileSpecialization           ,   10));
 
-            //_factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitBurningColonization             ,   10)); // Hot Blooded
-            //_factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitDryFrozenColonization           ,   10)); // Don't fear the freezer
+            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitBurningColonization             ,   10)); // Hot Blooded
+            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitDryFrozenColonization           ,   10)); // Don't fear the freezer
             // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitFloodedTemperateColonization    ,   10));
             // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitFrozenColonization              ,   10));
             // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitGasColonization                 ,   10));
-            //_factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitHotWetColonization              ,   10));
+            // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitHotWetColonization              ,   10));
             // _factionTraits.Add(new FactionTrait(FactionTraitType.FactionTraitTemperateColonization           ,   10));
 
             AddExclusivity(new List<int> { (int)FactionTraitType.FactionTraitAceSenators,
@@ -409,14 +409,11 @@ namespace ES2FactionRandomizer.Definitions.Traits
                                           (int)FactionTraitType.FactionTraitPessimistic1,
                                           (int)FactionTraitType.FactionTraitPessimistic2});
 
-            AddExclusivity(new List<int> {(int)FactionTraitType.FactionTraitFactionTraitManualHomeSystem,
+            AddExclusivity(new List<int> {
+                                          //(int)FactionTraitType.FactionTraitFactionTraitManualHomeSystem,
                                           (int)FactionTraitType.FactionTraitFerventColonists1,
                                           (int)FactionTraitType.FactionTraitFerventColonists2,
                                           (int)FactionTraitType.FactionTraitApatheticColonists});
-
-
-
-            
 
         }
         public FactionTrait GetRandomFactionTrait(List<int> iExclusionList, int iPointValueLessThan)

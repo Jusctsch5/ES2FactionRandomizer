@@ -10,8 +10,8 @@ namespace ES2FactionRandomizer.Definitions.Traits
     {
         AffinityMappingCravers         ,
         AffinityMappingSophons         ,
-        AffinityMappingVenetians         ,
-        AffinityMappingVodyani         ,
+        AffinityMappingVenetians       ,
+        AffinityMappingVampirilis      , // Vodyani
         AffinityMappingTerrans         ,
         AffinityMappingHoratio         ,
         AffinityMappingTimeLords       ,
@@ -39,8 +39,8 @@ namespace ES2FactionRandomizer.Definitions.Traits
                     return "PopulationModifiersTraitSophons";
                 case VisualAffinityType.AffinityMappingVenetians:
                     return "PopulationModifiersTraitVenetians";
-                case VisualAffinityType.AffinityMappingVodyani:
-                    return "PopulationModifiersTraitVodyani";
+                case VisualAffinityType.AffinityMappingVampirilis:
+                    return "PopulationModifiersTraitVampirilis";
                 case VisualAffinityType.AffinityMappingTerrans:
                     return "PopulationModifiersTraitTerrans";
                 case VisualAffinityType.AffinityMappingHoratio:
@@ -71,7 +71,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
             _settingGroup.Add(new VisualAffinity(VisualAffinityType.AffinityMappingSophons, 5));
             _settingGroup.Add(new VisualAffinity(VisualAffinityType.AffinityMappingTerrans, 10));
             _settingGroup.Add(new VisualAffinity(VisualAffinityType.AffinityMappingHoratio, 10));
-            _settingGroup.Add(new VisualAffinity(VisualAffinityType.AffinityMappingVodyani, 5));
+            _settingGroup.Add(new VisualAffinity(VisualAffinityType.AffinityMappingVampirilis, 5));
             _settingGroup.Add(new VisualAffinity(VisualAffinityType.AffinityMappingVenetians, 10));
             _settingGroup.Add(new VisualAffinity(VisualAffinityType.AffinityMappingTimeLords, 5));
             _settingGroup.Add(new VisualAffinity(VisualAffinityType.AffinityMappingUnfallen, 5));
@@ -94,7 +94,7 @@ namespace ES2FactionRandomizer.Definitions.Traits
         }
         public VisualAffinity GetVisualAffinity(VisualAffinityType iType)
         {
-            return (VisualAffinity)GetRandomSettingFromGroup((int)iType);
+            return (VisualAffinity)GetSettingFromGroup((int)iType);
         }
     }
 }

@@ -128,7 +128,7 @@ namespace ES2FactionRandomizer.RandomFaction.RandomizerMethods
             
             remainingTraitScore = desiredTraitScore - faction.CalculateTraitScore();
 
-            List<int> excludeTraits = new List<int>(faction._gameplayAffinity._factionTraitExclusionList);
+            List<int> excludeTraits = new List<int>(faction._gameplayAffinity._exclusiveSet);
             
             var trait = iDefinitions._factionTraitGroup.GetRandomFactionTraitRange(excludeTraits, 25, remainingTraitScore);
             if (trait != null) { 

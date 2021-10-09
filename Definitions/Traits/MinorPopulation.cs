@@ -14,7 +14,6 @@ namespace ES2FactionRandomizer.Definitions.Traits
         FactionTraitMinorBots,
         FactionTraitMinorDamage,
         FactionTraitMinorDeuyivans,
-        FactionTraitMinorDiplomacy,
         FactionTraitMinorEyders,
         FactionTraitMinorGalvrans,
         FactionTraitMinorGreenman,
@@ -53,10 +52,9 @@ namespace ES2FactionRandomizer.Definitions.Traits
             _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorAmoeba, 5));
             _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorBenthys, 10)); // Kalgeros
             _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorBhagabas, 5));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorBots, 10));
+            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorBots, 10)); // Epistis
             _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorDamage, 10));
             _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorDeuyivans, 10));
-            _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorDiplomacy, 10));
             _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorEyders, 10));
             _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorGalvrans, 5));
             _settingGroup.Add(new MinorPopulation(MinorPopulationType.FactionTraitMinorGreenman, 10)); // Amblyr

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ES2FactionRandomizer
@@ -205,7 +206,8 @@ namespace ES2FactionRandomizer
         
         public string CreatePopulationXmlString()
         {
-            string populationStr = @"<?xml version=""1.0"" encoding=""utf-8""?>
+            string populationStr = 
+@"<?xml version=""1.0"" encoding=""utf-8""?>
 <PopulationDefinition xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" AffinityName=""$VISUALAFFINITYUUID"" LocalizedName=""$FACTIONNAME"" UniquePopulationId=""2"">
   <DefaultPolitics>
     <Politics BaseScore=""1"" BaseTrend=""0"" PoliticsReference=""$POLITICS"" />
@@ -229,6 +231,8 @@ namespace ES2FactionRandomizer
     <Luxury>Luxury8</Luxury>
   </GrowthBoostLuxuryOptions>
 </PopulationDefinition>";
+
+            Console.Write(populationStr);
             populationStr = populationStr.Replace("$FACTIONNAME", _factionName);
             populationStr = populationStr.Replace("$POLITICS", _primaryPolitics.GetPoliticsReference());
             populationStr = populationStr.Replace("$VISUALAFFINITYUUID", _visualAffinityUuidStr);
@@ -289,12 +293,14 @@ namespace ES2FactionRandomizer
                 populationStr = populationStr.Replace("$POPTRI", _tertiaryPopulationModifier._jsonString);
             }
 
+            populationStr = Regex.Replace(populationStr, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
             return populationStr;
         }
 
         public string CreateFactionXmlString()
         {
-            string factionStr = @"<?xml version=""1.0"" encoding=""utf-8""?>
+            string factionStr = 
+@"<?xml version=""1.0"" encoding=""utf-8""?>
 <MajorFaction xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" Name=""$UUID"" Author=""Random"" Standard=""false"" Priority=""0"">
   <Affinity Name=""$GAMEPLAYAFFINITY"" />
   <Trait Name=""IsMajorFaction"" />
@@ -358,6 +364,7 @@ $POLITICSWEIGHT
             }
             factionStr = factionStr.Replace("$TECHS", techXmlString);
 
+            factionStr = Regex.Replace(factionStr, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
             return factionStr;
         }
 
